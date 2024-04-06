@@ -1,0 +1,105 @@
+:root {
+  --c-white: #ffffff;
+  --c-white-soft: #f1f8fa;
+  --c-light-gray-mute: #e0e0e0;
+
+  --c-black: #181818;
+  --c-black-soft: #222222;
+  --c-black-mute: #282828;
+
+  --c-dark-gray: rgb(150, 150, 150);
+  --c-gray-dark-darker-1: rgb(122, 122, 122);
+  --c-gray-dark-lighter-1: rgb(196, 194, 194);
+
+  --c-indigo: #2c3e50;
+
+  --c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --c-divider-dark-1: rgba(138, 79, 79, 0.65);
+  --c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --c-text-light-1: rgb(44, 48, 51);
+  --c-text-light-2: rgba(56, 57, 59, 0.918);
+  --c-text-dark-1: var(--c-white-soft);
+  --c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --c-boxshadow: rgb(228, 241, 255);
+  --c-boxshadow-dark: rgb(135, 160, 231);
+
+  --c-brand-title-light: rgb(98, 128, 192);
+  --c-brand-title-dark: rgb(66, 106, 124);
+
+  --c-button-light: rgb(153, 180, 233);
+  --c-button-dark: rgb(38, 144, 193);
+
+  --c-green: rgb(44, 228, 167);
+  --c-green-shadow: rgb(23, 158, 113);
+  --c-orange: rgb(255, 202, 104);
+  --c-yellow: rgb(228, 228, 1);
+  --c-yellow-shadow: rgb(192, 192, 35);
+
+  --color-background: var(--c-white);
+  --color-background-soft: var(--c-white-soft);
+  --color-background-mute: var(--c-light-gray-mute);
+  --color-background-invert: var(--c-gray-dark-darker-1);
+
+  --color-border: var(--c-divider-light-2);
+  --color-border-hover: var(--c-divider-light-1);
+
+  --color-heading: var(--c-text-light-2);
+  --color-text: var(--c-text-light-1);
+  --color-text-invert: var(--c-text-dark-2);
+
+  --color-brand-title: var(--c-brand-title-light);
+  --color-button: var(--c-button-dark);
+
+  --color-boxshadow: var(--c-boxshadow-dark);
+
+  --section-gap: 160px;
+}
+
+:root.dark {
+  --color-background: var(--c-gray-dark-darker-1);
+  --color-background-soft: var(--c-dark-gray);
+  --color-background-mute: var(--c-gray-dark-lighter-1);
+  --color-background-invert: var(--c-white);
+
+  --color-border: var(--c-divider-dark-2);
+  --color-border-hover: var(--c-divider-dark-1);
+
+  --color-heading: var(--c-text-dark-1);
+  --color-text: var(--c-text-dark-2);
+  --color-text-invert: var(--c-text-light-1);
+
+  --color-brand-title: var(--c-brand-title-dark);
+  --color-button: var(--c-button-light);
+
+  --color-boxshadow: var(--c-boxshadow);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+}

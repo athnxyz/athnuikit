@@ -1,0 +1,50 @@
+@import '@uikit/v-common.scss';
+
+
+.v-sidebar {
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: fit-content;
+  z-index: 1001;
+  overflow-x: hidden;
+  background-color: var(--color-background-mute);
+
+  .v-sidebar-divider {
+    @extend .flex-horizontal;
+
+    width: 100%;
+    background-color: var(--color-border);
+    height: 2px;
+    margin: 1rem 0 0 0;
+  }
+
+  .v-sidebar-close-button {
+    @extend .flex-horizontal;
+
+    justify-content: center;
+    padding: 0.25rem 1rem;
+    margin: 0.25rem;
+    font-size: 14px;
+    border-radius: 0.25rem;
+    box-shadow: 0px 6px 3px -3px var(--c-green-shadow);
+
+    &:hover {
+      box-shadow: 0px 0px 5px 2px var(--color-boxshadow);
+      cursor: pointer;
+    }
+  
+    &:active {
+      color: var(--color-button); 
+      box-shadow: 0px 0px 10px 3px var(--color-boxshadow);
+    }
+  }
+}
+
+.align-right {
+  right: 0;
+}
+
+.align-left {
+  left: 0;
+}

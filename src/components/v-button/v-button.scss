@@ -1,0 +1,22 @@
+@import '@uikit/v-common.scss';
+
+
+.v-button {
+  @extend .flex-horizontal;
+
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+
+  &:hover {
+    box-shadow: 0px 6px 3px -3px var(--color-boxshadow);
+    cursor: pointer;
+  }
+
+  &:active {
+    color: var(--color-button); 
+    box-shadow: 0px 0px 8px 2px var(--color-boxshadow);
+  }
+}
