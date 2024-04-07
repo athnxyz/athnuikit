@@ -23,7 +23,7 @@ const onSelect = async (key: T) => {
 
 <template>
 
-  <div>
+  <div class="v-master-view">
 
     <div class="v-master-view-keys" 
       :style="keyViewStyle ?? defaultKeyViewStyle">
@@ -37,7 +37,15 @@ const onSelect = async (key: T) => {
       </div>
 
     </div>
-    <slot name="dataview" :data="dataRef"></slot>
+
+    <div v-if="dataRef" class="v-master-view-data">
+      <slot name="dataview" :data="dataRef"></slot>
+    </div>
 
   </div>
+
 </template>
+
+<style lang="scss">
+@import '@uikit/components/v-master-view/v-master-view.scss';
+</style>

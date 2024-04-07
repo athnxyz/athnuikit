@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import about from '@uikit/views/about.vue';
 import vbuttonview from '@uikit/views/v-button-view.vue';
 import vcontainerview from '@uikit/views/v-container-view.vue';
+import vmasterviewv from '@uikit/views/v-master-view.vue'
 import vdropdownview from '@uikit/views/v-dropdown-view.vue';
 import vnavview from '@uikit/views/v-nav-view.vue';
 import vsidebarview from '@uikit/views/v-sidebar-view.vue';
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/vdropdown',
       name: 'vdropdown',
       component: vdropdownview
+    },
+    {
+      path: '/vmasterview',
+      name: 'vmasterview',
+      component: vmasterviewv
     },
     {
       path: '/vnav',

@@ -4,6 +4,7 @@ import vdarkmode from '@uikit/components/v-darkmode/v-darkmode.vue';
 import vdropdown from '@uikit/components/v-dropdown/v-dropdown.vue';
 import vinput from '@uikit/components/v-input/v-input.vue';
 import vlist from '@uikit/components/v-list/v-list.vue';
+import vmasterview from '@uikit/components/v-master-view/v-master-view.vue';
 import vnav from '@uikit/components/v-nav/v-nav.vue';
 import vnotification from '@uikit/components/v-notification/v-notification.vue';
 import vsidebar from '@uikit/components/v-sidebar/v-sidebar.vue';
@@ -23,6 +24,7 @@ export {
   vdropdown,
   vinput,
   vlist,
+  vmasterview,
   vnav,
   vnotification,
   vsidebar,
