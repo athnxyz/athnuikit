@@ -17,6 +17,7 @@ const toggleDropdown = (isOpen: boolean) => ! isOpen;
 const handleSelection = async (selection: DropdownOption) => { 
   await selection.action();
   emit('update:options', selection);
+  isOpen.value = toggleDropdown(isOpen.value);
 };
 
 const handleClickOutsideDropdown = (event: MouseEvent) => {

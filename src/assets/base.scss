@@ -39,6 +39,9 @@
   --v-action-light: rgb(30, 136, 229);
   --v-action-dark: rgb(129, 212, 250);
 
+  --v-hover-light: rgb(77, 182, 172);
+  --v-hover-dark: rgb(239, 154, 154);
+
   --v-action: var(--v-action-light);
   --v-background: var(--v-background-light);
   --v-background-mute: var(--v-background-light-mute);
@@ -49,10 +52,12 @@
   --v-button: var(--v-grey);
   --v-container: var(--v-pale-blue);
   --v-divider: var(--v-border-light);
+  --v-hover: var(--v-hover-light);
   --v-text-primary: var(--v-grey-text-primary);
   --v-text-secondary: var(--v-grey-text-secondary);
   --v-text-primary-invert: var(--v-soft-grey-text-primary);
   --v-text-secondary-invert: var(--v-soft-grey-text-secondary);
+  --v-title-border: var(--v-blue-primary);
 
   --section-gap: 160px;
 }
@@ -68,11 +73,12 @@
   --v-button: var(--v-soft-grey);
   --v-container: var(--v-slate-grey);
   --v-divider: var(--v-border-dark);
-
+  --v-hover: var(--v-hover-dark);
   --v-text-primary: var(--v-soft-grey-text-primary);
   --v-text-secondary: var(--v-soft-grey-text-secondary);
   --v-text-primary-invert: var(--v-grey-text-primary);
   --v-text-secondary-invert: var(--v-grey-text-secondary);
+  --v-title-border: var(--v-soft-blue-primary);
 }
 
 

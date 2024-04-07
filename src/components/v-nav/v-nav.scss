@@ -1,12 +1,13 @@
 @import '@uikit/v-common.scss';
 
+
 .v-nav-container {
   @extend .flex-horizontal;
 
   width: 100%;
   max-height: fit-content;
   background-color: var(--v-container);
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
 
@@ -22,7 +23,6 @@
   .v-nav-router {
     @extend .flex-horizontal;
 
-    width: fit-content;
     justify-content: space-between;
     align-items: center;
 
@@ -32,19 +32,18 @@
       padding: 0.25rem 0.5rem;
       align-items: center;
       justify-content: space-around;
-      font-weight: bold;
       border-radius: 0.25rem;
       gap: 0.5rem;
       text-decoration: none;
-      color: var(--color-brand-title);
+      color: var(--v-title-secondary);
 
       &:hover {
-        box-shadow: 0px 0px 5px 2px var(--v-boxshadow);
+        background-color: var(--v-hover);
         cursor: pointer;
       }
     
       &:active {
-        box-shadow: 0px 0px 10px 3px var(--v-boxshadow);
+        background-color: var(--v-active);
       }
     }
   }

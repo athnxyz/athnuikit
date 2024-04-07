@@ -10,8 +10,8 @@ const emit = defineEmits<ButtonEmits<T>>();
 const buttonClick = (option: T) => emit('update:option', props.action(option));
 
 const buttonStyle = ref({ 
-  color: props?.color ?? 'var(--v-text-primary-invert)', 
-  'background-color': props?.bgColor ?? 'var(--v-button)', 
+  color: ! props?.color && ! props?.overrideBtnClass ? 'var(--v-text-primary-invert)' : props.color, 
+  'background-color': ! props?.bgColor && ! props?.overrideBtnClass ? 'var(--v-button)' : props.bgColor, 
   'font-size': props?.fontSize, 
   'box-shadow': props?.boxShadow 
 });

@@ -12,8 +12,7 @@ const toggleDark = () => isDark.value = ! isDark.value;
     v-model:option="isDark"
     :action="toggleDark"
     :icon="isDark ? 'fa-solid fa-toggle-on' : 'fa-solid fa-toggle-off'"
-    color="var(--v-text-secondary)"
-    bgColor="inherit">
+    overrideBtnClass="v-darkmode">
   </v-button>
   
 </template>
