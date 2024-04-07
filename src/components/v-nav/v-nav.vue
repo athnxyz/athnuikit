@@ -22,6 +22,7 @@ defineProps<NavProps>();
     </div>
 
     <div class="v-nav-actions">
+      <v-darkmode></v-darkmode>
       <slot name="actions"></slot>
     </div>
   </div>

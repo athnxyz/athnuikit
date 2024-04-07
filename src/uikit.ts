@@ -1,5 +1,6 @@
 import vbutton from '@uikit/components/v-button/v-button.vue';
 import vcontainer from '@uikit/components/v-container/v-container.vue';
+import vdarkmode from '@uikit/components/v-darkmode/v-darkmode.vue';
 import vdropdown from '@uikit/components/v-dropdown/v-dropdown.vue';
 import vinput from '@uikit/components/v-input/v-input.vue';
 import vlist from '@uikit/components/v-list/v-list.vue';
@@ -18,6 +19,7 @@ import vslidevertical from '@uikit/animations/v-slide-vertical.vue';
 export { 
   vbutton,
   vcontainer,
+  vdarkmode,
   vdropdown,
   vinput,
   vlist,

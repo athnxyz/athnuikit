@@ -21,7 +21,7 @@
     align-items: center;
     z-index: 1001;
     overflow-y: auto;
-    background-color: var(--color-background-soft);
+    background-color: var(--v-background-mute);
     border-radius: 0.25rem;
 
     .v-dropdown-element {
@@ -32,13 +32,12 @@
       padding: 0.25rem 1rem;
 
       &:hover {
-        box-shadow: 0px 0px 5px 2px var(--color-boxshadow);
+        box-shadow: 0px 0px 5px 2px var(--v-boxshadow);
         cursor: pointer;
       }
 
       &:active {
-        color: var(--color-button); 
-        box-shadow: 0px 0px 10px 3px var(--color-boxshadow);
+        box-shadow: 0px 0px 10px 3px var(--v-boxshadow);
       }
     }
   }

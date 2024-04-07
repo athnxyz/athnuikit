@@ -3,6 +3,7 @@ import type { App, Component } from 'vue';
 import { 
   vbutton,
   vcontainer,
+  vdarkmode,
   vdropdown,
   vinput,
   vlist,
@@ -29,6 +30,7 @@ export class UIKitLoader {
     const componentRegitryList: ComponentRegistry[] = [
       { label: 'v-button', component: vbutton },
       { label: 'v-container', component: vcontainer },
+      { label: 'v-darkmode', component: vdarkmode },
       { label: 'v-dropdown', component: vdropdown },
       { label: 'v-input', component: vinput },
       { label: 'v-list', component: vlist },

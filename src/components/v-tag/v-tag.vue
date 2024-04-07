@@ -7,8 +7,9 @@ defineProps<TagProps>();
 
 <template>
 
-  <div class="v-tag">
-    <div class="v-tag-content">{{ content }}</div>
+  <div class="v-tag" 
+    :style="{ color, 'background-color': bgColor }">
+    <div class="v-tag-content">{{ content.text }}</div>
   </div>
 
 </template>

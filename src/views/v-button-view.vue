@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+import { viewContainerStyle, innerContainerStyle } from '@uikit/views/viewstyles';
 
-const buttonDetailListItems = [
+const buttonDetailListItems = ref([
   { key: 'v-model:option: T', content: 'the selectable action on the button' },
   { key: 'action: (option: T) => T', content: 'the update function on button click' },
   { key: 'icon?: string', content: 'button icon' },
@@ -12,26 +13,17 @@ const buttonDetailListItems = [
   { key: 'boxShadow?: string', content: 'button box shadow' },
   { key: 'fontSize?: string', content: 'button text font size' },
   { key: 'overrideBtnClass?: string', content: 'override button style' }
-];
+]);
 
-const viewContainerStyle = {
-  width: '100%'
-}
-
-const innerContainerStyle = {
-  width: '100%',
-  height: 'fit-content',
-};
-
-const showText = ref(false);
-const handleClick = (option: boolean) => ! option;
+const messages: ('click me!' | 'clicked!')[] = [ 'click me!', 'clicked!' ]
+const message = ref(messages[0]);
+const handleClick = (option: string) => messages.filter(m => m !== option)[0];
 
 const implementation = `
 <v-button 
-  v-model:option="showText"
+  v-model:option="message"
   :action="handleClick"
-  message="reveal message"
-  bgColor="var(--color-button)">
+  :message="message">
 </v-button>`;
 </script>
 
@@ -44,7 +36,7 @@ const implementation = `
 
     <v-container
       orientation="vertical" 
-      :border="true"
+      :border="false"
       :style="innerContainerStyle">
       <v-title title="vbutton"></v-title>
       <v-list :items="buttonDetailListItems"></v-list>
@@ -52,30 +44,22 @@ const implementation = `
     
     <v-container
       orientation="vertical" 
-      :border="true"
+      :border="false"
       :style="innerContainerStyle">
 
       <v-title title="example"></v-title>
       
-      <v-container 
-        orientation="horizontal" 
-        :border="false"
-        :style="innerContainerStyle">
-        <v-button 
-          v-model:option="showText"
-          :action="handleClick"
-          message="reveal message"
-          bgColor="var(--color-button)">
-        </v-button>
-
-        <v-text v-if="showText">message revealed!</v-text>
-      </v-container>
+      <v-button 
+        v-model:option="message"
+        :action="handleClick"
+        :message="message">
+      </v-button>
 
     </v-container>
 
     <v-container 
       orientation="vertical" 
-      :border="true"
+      :border="false"
       :style="innerContainerStyle">
       <v-title title="implementation"></v-title>
       <v-input v-model:value="implementation" :disabled="true"></v-input>

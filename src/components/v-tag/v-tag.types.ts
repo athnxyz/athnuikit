@@ -1,3 +1,6 @@
 export interface TagProps {
-  content: string;
+  content: { text?: string, icon?: string };
+  color: string;
+  bgColor: string;
+  
 }

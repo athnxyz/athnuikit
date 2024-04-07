@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { viewContainerStyle, innerContainerStyle } from '@uikit/views/viewstyles';
 </script>
 
 <template>

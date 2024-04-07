@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { RouterView } from 'vue-router'
 
 
-const routerLinks = [
+const routerLinks = ref([
   { path: '/about', label: 'about' },
   { path: '/vbutton', label: 'vbutton' },
   { path: '/vcontainer', label: 'vcontainer' },
@@ -11,26 +12,22 @@ const routerLinks = [
   { path: '/vsidebar', label: 'vsidebar' },
   { path: '/vtag', label: 'vtag' },
   { path: '/vtitle', label: 'vtitle' }
-];
+]);
 
-const appViewStyle = {
-  height: '100%',
-  border: 'none',
-  'border-radius': '0.25rem',
-  'overflow-y': 'scroll'
-};
+const appViewStyle = { height: '100%' };
 </script>
 
 <template>
 
+  <v-nav
+    :title="{ title: 'vuikit', subTitle: 'a vue component collection' }"
+    :routerLinks="routerLinks">
+  </v-nav>
+
   <v-container
     orientation="vertical"
+    :border="false"
     :style="appViewStyle">
-
-    <v-nav
-      :title="{ title: 'vuikit' }"
-      :routerLinks="routerLinks">
-    </v-nav>
 
     <RouterView></RouterView>
 

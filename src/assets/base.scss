@@ -1,80 +1,78 @@
 :root {
-  --c-white: #ffffff;
-  --c-white-soft: #f1f8fa;
-  --c-light-gray-mute: #e0e0e0;
+  --v-blue-primary: rgb(25, 118, 210);
+  --v-soft-blue-primary: rgb(144, 202, 249);
+  --v-blue-info: rgb(2, 136, 209);
+  --v-soft-blue-info: rgb(144, 202, 249);
+  --v-blue-highlight: rgb(3, 169, 244);
+  --v-soft-blue-highlight: rgb(79, 195, 247);
+  --v-pale-blue: rgb(237, 246, 249);
 
-  --c-black: #181818;
-  --c-black-soft: #222222;
-  --c-black-mute: #282828;
+  --v-grey: rgb(117, 117, 117);
+  --v-grey-text-primary: rgb(33, 33, 33);
+  --v-grey-text-secondary: rgb(97, 97, 97);
+  --v-soft-grey: rgb(207, 216, 220);
+  --v-soft-grey-text-primary: rgb(229, 229, 229);
+  --v-soft-grey-text-seconday: rgb(189, 189, 189);
+  --v-slate-grey: rgb(75, 85, 99);
 
-  --c-dark-gray: rgb(150, 150, 150);
-  --c-gray-dark-darker-1: rgb(122, 122, 122);
-  --c-gray-dark-lighter-1: rgb(196, 194, 194);
+  --v-red: rgb(255, 143, 0);
+  --v-soft-red: rgb(255, 209, 128);
 
-  --c-indigo: #2c3e50;
+  --v-green: rgb(56, 142, 60);
+  --v-soft-green: rgb(165, 214, 167);
 
-  --c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --c-divider-dark-1: rgba(138, 79, 79, 0.65);
-  --c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --v-off-white: rgb(250, 250, 250);
 
-  --c-text-light-1: rgb(44, 48, 51);
-  --c-text-light-2: rgba(56, 57, 59, 0.918);
-  --c-text-dark-1: var(--c-white-soft);
-  --c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --v-background-light: rgb(250, 250, 250);
+  --v-background-light-mute: rgb(240, 240, 240);
+  --v-background-dark: rgb(48, 48, 48);
+  --v-background-dark-mute: rgb(58, 58, 58);
 
-  --c-boxshadow: rgb(228, 241, 255);
-  --c-boxshadow-dark: rgb(135, 160, 231);
+  --v-text-light: rgb(33, 33, 33);
+  --v-text-dark: rgb(229, 229, 229);
 
-  --c-brand-title-light: rgb(98, 128, 192);
-  --c-brand-title-dark: rgb(66, 106, 124);
+  --v-border-light: rgb(224, 224, 224);
+  --v-border-light-mute: rgb(200, 200, 200);
+  --v-border-dark: rgb(81, 81, 81);
+  --v-border-dark-mute: rgb(105, 105, 105);
 
-  --c-button-light: rgb(153, 180, 233);
-  --c-button-dark: rgb(38, 144, 193);
+  --v-action-light: rgb(30, 136, 229);
+  --v-action-dark: rgb(129, 212, 250);
 
-  --c-green: rgb(44, 228, 167);
-  --c-green-shadow: rgb(23, 158, 113);
-  --c-orange: rgb(255, 202, 104);
-  --c-yellow: rgb(228, 228, 1);
-  --c-yellow-shadow: rgb(192, 192, 35);
-
-  --color-background: var(--c-white);
-  --color-background-soft: var(--c-white-soft);
-  --color-background-mute: var(--c-light-gray-mute);
-  --color-background-invert: var(--c-gray-dark-darker-1);
-
-  --color-border: var(--c-divider-light-2);
-  --color-border-hover: var(--c-divider-light-1);
-
-  --color-heading: var(--c-text-light-2);
-  --color-text: var(--c-text-light-1);
-  --color-text-invert: var(--c-text-dark-2);
-
-  --color-brand-title: var(--c-brand-title-light);
-  --color-button: var(--c-button-dark);
-
-  --color-boxshadow: var(--c-boxshadow-dark);
+  --v-action: var(--v-action-light);
+  --v-background: var(--v-background-light);
+  --v-background-mute: var(--v-background-light-mute);
+  --v-background-invert: var(--v-background-dark);
+  --v-border: var(--v-border-light);
+  --v-border-mute: var(--v-border-light-mute);
+  --v-boxshadow: var(--v-blue-highlight);
+  --v-button: var(--v-grey);
+  --v-container: var(--v-pale-blue);
+  --v-divider: var(--v-border-light);
+  --v-text-primary: var(--v-grey-text-primary);
+  --v-text-secondary: var(--v-grey-text-secondary);
+  --v-text-primary-invert: var(--v-soft-grey-text-primary);
+  --v-text-secondary-invert: var(--v-soft-grey-text-secondary);
 
   --section-gap: 160px;
 }
 
 :root.dark {
-  --color-background: var(--c-gray-dark-darker-1);
-  --color-background-soft: var(--c-dark-gray);
-  --color-background-mute: var(--c-gray-dark-lighter-1);
-  --color-background-invert: var(--c-white);
+  --v-action: var(--v-action-dark);
+  --v-background: var(--v-background-dark);
+  --v-background-mute: var(--v-background-dark-mute);
+  --v-background-invert: var(--v-background-light);
+  --v-border: var(--v-border-dark);
+  --v-border-mute: var(--v-border-dark-mute);
+  --v-boxshadow: var(--v-soft-blue-highlight);
+  --v-button: var(--v-soft-grey);
+  --v-container: var(--v-slate-grey);
+  --v-divider: var(--v-border-dark);
 
-  --color-border: var(--c-divider-dark-2);
-  --color-border-hover: var(--c-divider-dark-1);
-
-  --color-heading: var(--c-text-dark-1);
-  --color-text: var(--c-text-dark-2);
-  --color-text-invert: var(--c-text-light-1);
-
-  --color-brand-title: var(--c-brand-title-dark);
-  --color-button: var(--c-button-light);
-
-  --color-boxshadow: var(--c-boxshadow);
+  --v-text-primary: var(--v-soft-grey-text-primary);
+  --v-text-secondary: var(--v-soft-grey-text-secondary);
+  --v-text-primary-invert: var(--v-grey-text-primary);
+  --v-text-secondary-invert: var(--v-grey-text-secondary);
 }
 
 
@@ -89,8 +87,8 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: var(--v-text-primary);
+  background: var(--v-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,

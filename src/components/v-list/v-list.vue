@@ -11,7 +11,7 @@ const defaultIcon = 'fa-solid fa-check-circle'
   <div class="v-list">
 
     <v-fade type="group" tag="ul">
-      <li v-for="item of items" :key="item" class="v-list-item">
+      <li v-for="item of items" :key="item.key" class="v-list-item">
         <font-awesome-icon :icon="icon ? icon : defaultIcon"></font-awesome-icon>
         <div class="v-list-item-key">[{{ item.key }}]</div> {{  item.content }}
       </li>

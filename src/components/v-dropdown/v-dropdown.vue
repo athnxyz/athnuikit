@@ -40,6 +40,7 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
         :action="toggleDropdown"
         :icon="button.icon"
         :message="button.message"
+        :color="button.color"
         :bgColor="button.bgColor"
         :overrideBtnClass="button.overrideBtnClass">
       </v-button>

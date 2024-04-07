@@ -6,7 +6,7 @@
   margin: 0 auto;
   background-image: linear-gradient(
     to bottom right, 
-    var(--color-background-mute), 
+    var(--v-background-mute), 
     var(--color-brand-title)
   );
   position: relative;
@@ -36,7 +36,7 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        background: var(--color-background-soft);
+        background: var(--v-background-soft);
         border-radius: 0.5rem;
       }
     }
