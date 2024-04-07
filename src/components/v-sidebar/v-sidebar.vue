@@ -34,26 +34,29 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideSi
       :action="toggleSidebar"
       :icon="button.icon"
       :message="button.message"
+      :bgColor="button.bgColor"
       :overrideBtnClass="button.overrideBtnClass">
     </v-button>
   </div>
 
-  <div v-if="isOpen" 
-    ref="sidebarContainer" 
-    :class="position === 'left' ? 'v-sidebar align-left' : 'v-sidebar align-right'">
-    
-    <v-button
-      v-model:option="isOpen"
-      :action="toggleSidebar"
-      icon="fa-solid fa-close"
-      overrideBtnClass="v-sidebar-close-button">
-    </v-button>
+  <v-slide-horizontal type="single">
+    <div v-if="isOpen"
+      ref="sidebarContainer" 
+      :class="position === 'left' ? 'v-sidebar align-left' : 'v-sidebar align-right'">
+      
+      <v-button
+        v-model:option="isOpen"
+        :action="toggleSidebar"
+        icon="fa-solid fa-close"
+        overrideBtnClass="v-sidebar-close-button">
+      </v-button>
 
-    <div class="v-sidebar-divider"></div>
-    
-    <slot name="sidebar"></slot>
+      <div class="v-sidebar-divider"></div>
+      
+      <slot name="sidebar"></slot>
 
-  </div>
+    </div>
+  </v-slide-horizontal>
 
 </template>
 

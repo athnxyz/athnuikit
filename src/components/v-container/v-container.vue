@@ -12,8 +12,8 @@ const defaultStyle = {
 <template>
 
   <div 
-    :class="orientation === 'vertical' ? 'v-container flex-vertical' : 'v-container flex-horizontal'"
-    :style="style ? style : defaultStyle">
+    :class="orientation === 'vertical' ? 'v-container-vertical' : 'v-container-horizontal'"
+    :style="style ? { ...style, ...defaultStyle } : defaultStyle">
     <slot></slot>
   </div>
 

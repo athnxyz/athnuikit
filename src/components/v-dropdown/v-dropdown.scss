@@ -8,15 +8,21 @@
   display: inline-block;
   width: fit-content;
 
+  .v-dropdown-button {
+    z-index: 1002;
+  }
+
   .v-dropdown-elements {
     @extend .flex-vertical;
 
     position: absolute;
+    min-width: 150px;
     height: fit-content;
     align-items: center;
     z-index: 1001;
     overflow-y: auto;
     background-color: var(--color-background-soft);
+    border-radius: 0.25rem;
 
     .v-dropdown-element {
       @extend .flex-horizontal;

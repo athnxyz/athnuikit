@@ -1,32 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { 
-  faToggleOn,
-  faDice,
-  faMoneyBillWave,
-  faHouse,
   faChartBar,
-  faToggleOff,
+  faCheckCircle,
   faCircle,
+  faClose,
   faSliders,
-  faClose
+  faToggleOff,
+  faToggleOn,
 } from '@fortawesome/free-solid-svg-icons';
-import { faBitcoin } from '@fortawesome/free-brands-svg-icons';
 
 
 class FontAwesomeLoader {
   load() {
     const iconList = [
-      faToggleOn,
-      faDice,
-      faMoneyBillWave,
-      faBitcoin,
-      faHouse,
       faChartBar,
-      faToggleOff,
+      faCheckCircle,
       faCircle,
+      faClose,
       faSliders,
-      faClose
+      faToggleOff,
+      faToggleOn,
     ];
 
     library.add(...iconList);

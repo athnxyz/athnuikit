@@ -34,25 +34,28 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
 
   <div class="v-dropdown">
 
-    <div ref="dropdownButton">
+    <div ref="dropdownButton" class="v-dropdown-button">
       <v-button
         v-model:option="isOpen"
         :action="toggleDropdown"
         :icon="button.icon"
         :message="button.message"
+        :bgColor="button.bgColor"
         :overrideBtnClass="button.overrideBtnClass">
       </v-button>
     </div>
 
-    <div v-if="isOpen" ref="dropdownContainer" class="v-dropdown-elements">
-      <v-button v-for="o in options"
-        :option="o"
-        :action="handleSelection"
-        :message="o.label"
-        :icon="o.icon"
-        overrideBtnClass="v-dropdown-element">
-      </v-button>
-    </div>
+    <v-slide-vertical type="single">
+      <div v-if="isOpen" ref="dropdownContainer" class="v-dropdown-elements">
+        <v-button v-for="o in options"
+          :option="o"
+          :action="handleSelection"
+          :message="o.label"
+          :icon="o.icon"
+          overrideBtnClass="v-dropdown-element">
+        </v-button>
+      </div>
+    </v-slide-vertical>
 
   </div>
 
