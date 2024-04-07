@@ -8,8 +8,10 @@ defineProps<TitleProps>();
 <template>
 
   <div class="v-title">
+
     <p class="v-title-main">{{ title.toUpperCase() }}</p>
     <p v-if="subTitle" class="v-title-secondary">{{ subTitle.toUpperCase() }}</p>
+    
   </div>
   
 </template>

@@ -3,22 +3,21 @@ import { ref } from 'vue';
 
 import type { AnimationProps } from '@uikit/animations/animations.types';
 
+
 const props = defineProps<AnimationProps>();
 const isGroup = ref(props.type === 'group');
 </script>
 
 <template>
-  <TransitionGroup 
-    v-if="isGroup" 
-    name="v-slide-horizontal" 
-    :tag="tag"
-    appear>
+
+  <TransitionGroup v-if="isGroup" name="v-slide-horizontal" :tag="tag" appear>
     <slot></slot>
   </TransitionGroup>
 
   <Transition v-else name="v-slide-horizontal">
     <slot></slot>
   </Transition>
+
 </template>
 
 <style lang="scss">

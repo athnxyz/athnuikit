@@ -14,8 +14,7 @@ defineProps<NavProps>();
     </div>
 
     <div class="v-nav-router">
-      <RouterLink v-for="route in routerLinks" 
-        class="v-nav-router-link" 
+      <RouterLink v-for="route in routerLinks" class="v-nav-router-link" 
         :to="route.path">
         {{ route.label }}
       </RouterLink>

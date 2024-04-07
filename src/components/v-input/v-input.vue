@@ -8,7 +8,6 @@ const props = defineProps<InputProps>();
 const emit = defineEmits<InputEmits>();
 
 const valueRef = ref(props.value);
-
 watch(valueRef, (update: string) => emit('update:value', update));
 </script>
 

@@ -1,11 +1,12 @@
 <script setup lang="ts" generic="T">
 import type { Ref } from 'vue';
 import { ref, onBeforeUnmount, onMounted } from 'vue';
+import { every } from 'lodash';
 
 import type { DropdownEmits, DropdownProps, DropdownOption } from '@uikit/components/v-dropdown/v-dropdown.types';
 
 
-const props = defineProps<DropdownProps>();
+defineProps<DropdownProps>();
 const emit = defineEmits<DropdownEmits<T>>();
 
 const dropdownButton: Ref<HTMLElement | null> = ref(null);
@@ -16,15 +17,18 @@ const isOpen: Ref<boolean> = ref(false);
 const toggleDropdown = (isOpen: boolean) => ! isOpen;
 const handleSelection = async (selection: DropdownOption) => { 
   await selection.action();
+
   emit('update:options', selection);
   isOpen.value = toggleDropdown(isOpen.value);
 };
 
 const handleClickOutsideDropdown = (event: MouseEvent) => {
-  if (
-    (dropdownButton.value && ! dropdownButton.value.contains(event.target as Node)) 
-    && (dropdownContainer.value && ! dropdownContainer.value.contains(event.target as Node))
-  ) { isOpen.value = toggleDropdown(isOpen.value); }
+  const condition = every([
+    dropdownButton.value && ! dropdownButton.value.contains(event.target as Node),
+    dropdownContainer.value && ! dropdownContainer.value.contains(event.target as Node)
+  ]);
+
+  if (condition) isOpen.value = toggleDropdown(isOpen.value);
 };
 
 onMounted(() => document.addEventListener('click', handleClickOutsideDropdown, true));

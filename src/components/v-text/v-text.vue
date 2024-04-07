@@ -6,9 +6,11 @@ defineProps<TextProps>();
 </script>
 
 <template>
+
   <div class="v-text-container">
     <slot></slot>
   </div>
+  
 </template>
 
 <style lang="scss">

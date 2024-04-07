@@ -1,18 +1,19 @@
 @import '@uikit/v-common.scss';
 
+
 .v-master-view {
   @extend .flex-horizontal;
-  
+  width: 100%;
+
   .v-master-view-keys {
     @extend .flex-vertical;
 
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     gap: 0.25rem;
 
     .v-master-view-key {
       @extend .flex-horizontal;
-      justify-content: flex-start;
       padding: 0.5rem 0.25rem;
 
       .v-master-view-key-slot {
@@ -21,7 +22,10 @@
     }
 
     .v-master-view-data {
-      @extend .flex-vertical
+      @extend .flex-vertical;
+      
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 }

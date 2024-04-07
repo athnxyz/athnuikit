@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
 import type { ListProps } from '@uikit/components/v-list/v-list.types';
 
 
 defineProps<ListProps>();
-const defaultIcon = 'fa-solid fa-check-circle'
+const defaultIcon = ref('fa-solid fa-check-circle');
 </script>
 
 <template>

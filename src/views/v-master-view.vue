@@ -73,8 +73,8 @@ const implementation = `
       <v-title title="example"></v-title>
       
       <v-master-view
+        v-model:selectedKey="selected"
         :keys="keys"
-        :selectedKey="selected"
         :extractKeyFn="extractKeyFn"
         :getDataFn="getDataFn">
         

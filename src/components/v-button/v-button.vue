@@ -19,8 +19,7 @@ const buttonStyle = ref({
 
 <template>
 
-  <div 
-    :class="overrideBtnClass ? overrideBtnClass : 'v-button'"
+  <div :class="overrideBtnClass ? overrideBtnClass : 'v-button'"
     :style="buttonStyle"
     @click="buttonClick(props.option)">
     <font-awesome-icon v-if="icon" :icon="icon"/>

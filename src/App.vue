@@ -14,25 +14,22 @@ const routerLinks = ref([
   { path: '/vtag', label: 'vtag' },
   { path: '/vtitle', label: 'vtitle' }
 ]);
-
-const appViewStyle = { height: '100%' };
 </script>
 
 <template>
 
-  <v-nav
-    :title="{ title: 'vuikit', subTitle: 'a vue component collection' }"
-    :routerLinks="routerLinks">
-  </v-nav>
+  <div class="app-container">
+    <div class="app-content">
 
-  <v-container
-    orientation="vertical"
-    :border="false"
-    :style="appViewStyle">
+      <v-nav
+        :title="{ title: 'vuikit', subTitle: 'a vue component collection' }"
+        :routerLinks="routerLinks">
+      </v-nav>
 
-    <RouterView></RouterView>
+      <RouterView></RouterView>
 
-  </v-container>
+    </div>
+  </div>
 
 </template>
 

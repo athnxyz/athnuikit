@@ -3,8 +3,7 @@ export interface MasterViewProps<T, V> {
   selectedKey: T;
   extractKeyFn(keyObj: T): string;
   getDataFn(key: string): Promise<V>;
-  keyViewStyle?: { [style: string]: string };
-  // dataViewStyle?: { [style: string]: string };
+  viewWidths?: { keyView: string, dataView: string };
 }
 
 export interface MasterViewEmits<T> {
@@ -14,3 +13,8 @@ export interface MasterViewEmits<T> {
 export const defaultKeyViewStyle: { [style: string]: string } = {
   'border-right': '2px solid var(--v-border)'
 }
+
+export const defaultViewWidths: { keyView: string, dataView: string } = {
+  keyView: '40%',
+  dataView: '60%'
+};
