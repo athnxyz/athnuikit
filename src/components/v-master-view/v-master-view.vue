@@ -12,7 +12,7 @@ const emit = defineEmits<MasterViewEmits<T>>();
 
 const masterKeyViewRef = ref(null);
 const dataRef: Ref<V | null> = ref(null);
-const keyViewStyle = ref({
+const keyViewStyle = ref({ 
   width: props.viewWidths?.keyView ?? defaultViewWidths.keyView,
   ...defaultKeyViewStyle
 });
@@ -21,11 +21,12 @@ const onSelect = async (key: T) => {
   try {
     const extractedKey = props.extractKeyFn(key);
     dataRef.value = await props.getDataFn(extractedKey);
+
     emit('update:selectedKey', key);
   } catch (err) { error.value = err as Error; }
 };
 
-const { items, loading, error } = usePaginatedScrollLoader(props.loadKeysFn, masterKeyViewRef)
+const { items, loading, error } = usePaginatedScrollLoader(props.loadKeysFn, masterKeyViewRef);
 </script>
 
 <template>
