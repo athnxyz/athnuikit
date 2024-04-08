@@ -9,6 +9,5 @@ interface NavTitle extends TitleProps {
 export interface NavProps {
   title: NavTitle;
   routerLinks: { path: `/${string}`, label: string }[];
-  actions?: Component[];
   style?: { [style: string]: string };
 }
