@@ -6,6 +6,7 @@ import { RouterView } from 'vue-router'
 const routerLinks = ref([
   { path: '/about', label: 'about' },
   { path: '/vbutton', label: 'vbutton' },
+  { path: '/vcomposables', label: 'vcomposables' },
   { path: '/vcontainer', label: 'vcontainer' },
   { path: '/vdropdown', label: 'vdropdown' },
   { path: '/vmasterview', label: 'vmasterview' },

@@ -4,7 +4,7 @@ import { ref } from 'vue';
 
 import type { MasterViewEmits, MasterViewProps } from '@uikit/components/v-master-view/v-master-view.types';
 import { defaultKeyViewStyle, defaultViewWidths } from '@uikit/components/v-master-view/v-master-view.types';
-import { usePaginatedScrollLoader } from '@uikit/composables/useScrollLoader';
+import { useScrollLoader } from '@uikit/composables/useScrollLoader';
 
 
 const props = defineProps<MasterViewProps<T, V>>();
@@ -26,7 +26,7 @@ const onSelect = async (key: T) => {
   } catch (err) { error.value = err as Error; }
 };
 
-const { items, loading, error } = usePaginatedScrollLoader(props.loadKeysFn, masterKeyViewRef);
+const { items, loading, error } = useScrollLoader(props.loadKeysFn, masterKeyViewRef);
 </script>
 
 <template>

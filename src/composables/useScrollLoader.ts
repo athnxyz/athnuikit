@@ -2,7 +2,7 @@ import type { Ref } from 'vue';
 import { ref, watchEffect, onMounted, onUnmounted } from 'vue';
 
 
-export const usePaginatedScrollLoader = <T>(
+export const useScrollLoader = <T>(
   loadPageFn: (page: number) => Promise<T[]>,
   scrollableElementRef: Ref<HTMLElement | null>
 ) => {

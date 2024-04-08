@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import about from '@uikit/views/about.vue';
 import vbuttonview from '@uikit/views/v-button-view.vue';
+import vcomposables from '@uikit/views/v-composables.vue';
 import vcontainerview from '@uikit/views/v-container-view.vue';
 import vmasterviewv from '@uikit/views/v-master-view.vue'
 import vdropdownview from '@uikit/views/v-dropdown-view.vue';
@@ -23,6 +24,11 @@ const router = createRouter({
       path: '/vbutton',
       name: 'vbutton',
       component: vbuttonview
+    },
+    {
+      path: '/vcomposables',
+      name: 'vcomposables',
+      component: vcomposables
     },
     {
       path: '/vcontainer',

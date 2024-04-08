@@ -6,8 +6,8 @@ import { ref } from 'vue';
 type ShowcaseKeyType = { id: number, content: string };
 
 const masterViewDetailListItems = ref([
-  { key: 'keys: T[]', content: 'the key objects for the key view' },
   { key: 'selectedKey: T', content: 'the currently selected key element' },
+  { key: 'loadKeysFn(page: number): Promise<T[]>', content: 'lazy load keys on scroll' },
   { key: 'extractKeyFn(keyObj: T): string', content: 'extract the unique id from a key' },
   { key: 'getDataFn(key: string): Promise<V>', content: 'get the data associated with a key' },
   { key: 'keyViewStyle?: { [style: string]: string }', content: 'optional styling for the key view' },
