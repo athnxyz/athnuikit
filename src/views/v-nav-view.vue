@@ -23,7 +23,7 @@ const navImplementation = `
   <v-container orientation="vertical">
     
     <v-container orientation="vertical" border>
-      <v-title title="usescrollloader"></v-title>
+      <v-title title="vnav"></v-title>
       <v-list :items="navDetailsList"></v-list>
       <v-input v-model:value="navImplementation" disabled></v-input>
     </v-container>
