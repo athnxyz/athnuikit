@@ -1,8 +1,8 @@
 import type { Ref } from 'vue';
 import { ref } from 'vue';
 
-import type { LocalStorageKey } from '@uikit/types/LocalStorage';
 
+type LocalStorageKey <PRF extends string, KEY extends string> = `${PRF}-${KEY}`;
 
 const genPrefixedKey = <PRF extends string, KEY extends string>(prefix: PRF, key: KEY): LocalStorageKey<PRF, KEY> => `${prefix}-${key}`;
 
@@ -30,8 +30,5 @@ export const useLocalStorage = <PRF extends string, KEY extends string>() => {
 
   const clear = () => localStorageRef.value.clear();
 
-  return { 
-    localStorageRef, updateValueForKeyMap,
-    setItem, getItem, deleteItem, clear 
-  };
+  return { localStorageRef, updateValueForKeyMap, setItem, getItem, deleteItem, clear };
 };

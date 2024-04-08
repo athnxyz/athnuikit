@@ -93,14 +93,14 @@ const implementation = `
 
 <template>
   
-  <v-container orientation="vertical">
+  <v-container orientation="vertical" overflow="auto">
 
     <v-container orientation="vertical" border>
       <v-title title="vmasterview"></v-title>
       <v-list :items="masterViewDetailListItems"></v-list>
     </v-container>
     
-    <v-container orientation="vertical" hidden>
+    <v-container orientation="vertical" overflow="hidden">
       <v-title title="example"></v-title>
       <v-master-view
         v-model:selectedKey="selectedKey"

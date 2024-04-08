@@ -5,6 +5,7 @@
   @extend .flex-horizontal;
 
   max-height: fit-content;
+  width: 100%;
   background-color: var(--v-container);
   justify-content: space-between;
   align-items: center;

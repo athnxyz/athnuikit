@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<ContainerProps>(), defaultContainerProps)
 const defaultStyle = ref({ 
   border: props.border ? '2px solid var(--v-border)' : 'none', 
   'border-radius': '0.25rem',
-  ...(props.hidden ? { overflow: 'hidden' } : {})
+  overflow: props.overflow
 });
 </script>
 

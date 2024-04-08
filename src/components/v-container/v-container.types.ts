@@ -1,11 +1,11 @@
 export type ContainerProps = {
   orientation: 'vertical' | 'horizontal';
   border?: boolean;
-  hidden?: boolean;
+  overflow?: 'hidden' | 'auto' | 'visible';
   style?: { [style: string]: string };
 }
 
-export const defaultContainerProps: Pick<ContainerProps, 'border' | 'hidden'> = {
+export const defaultContainerProps: Pick<ContainerProps, 'border' | 'overflow'> = {
   border: false,
-  hidden: true
+  overflow: 'visible'
 }

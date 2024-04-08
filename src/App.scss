@@ -17,12 +17,17 @@
   .app-container {
     @extend .flex-vertical;
 
-    margin: 0.25rem;
     flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
 
     .app-content {
       @extend .flex-vertical;
+
+      flex: 1 1 auto;
+      margin: 0.25rem;
       overflow-y: hidden;
+      overflow-x: hidden;
     }
   }
 }

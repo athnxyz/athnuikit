@@ -7,9 +7,10 @@ export const useScrollLoader = <T>(
   scrollableElementRef: Ref<HTMLElement | undefined>
 ) => {
   const items: Ref<T[]> = ref([]);
+  const prevItems: Ref<T[]> = ref([]);
   const currPage: Ref<number> = ref(0);
   const loading: Ref<boolean> = ref(false);
-  const error = ref<Error>();
+  const scrollError = ref<Error>();
 
   const onPaginate = async () => {
     if (! scrollableElementRef.value || loading.value) return;
@@ -24,11 +25,12 @@ export const useScrollLoader = <T>(
         const nextItems = await loadPageFn(currPage.value + 1);
 
         if (nextItems?.length > 0) { 
-          items.value = [ ...nextItems ];
+          items.value = [ ...prevItems.value, ...nextItems ];
+          prevItems.value = nextItems;
           currPage.value++;
         }
       } catch (err) { 
-        error.value = err as Error;
+        scrollError.value = err as Error;
       } finally { loading.value = false; }
     }
     
@@ -36,14 +38,15 @@ export const useScrollLoader = <T>(
     if (scrollPosition <= 100 && currPage.value > 0) { // Similar threshold for the top
       try {
         loading.value = true;
-        const prevItems = await loadPageFn(currPage.value - 1);
+        const nextItems = await loadPageFn(currPage.value - 1);
 
-        if (prevItems?.length > 0) { 
-          items.value = [ ...prevItems ];
+        if (nextItems?.length > 0) { 
+          items.value = [ ...nextItems, ...prevItems.value ];
+          prevItems.value = nextItems;
           currPage.value--;
         }
       } catch (err) { 
-        error.value = err as Error;
+        scrollError.value = err as Error;
       } finally { loading.value = false; }
     }
   }
@@ -58,5 +61,5 @@ export const useScrollLoader = <T>(
     if (scrollableElementRef.value) scrollableElementRef.value.removeEventListener('scroll', onPaginate);
   });
 
-  return { items, loading, error };
+  return { items, loading, scrollError };
 };

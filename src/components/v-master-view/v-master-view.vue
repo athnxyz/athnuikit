@@ -12,6 +12,8 @@ const emit = defineEmits<MasterViewEmits<T>>();
 
 const masterKeyViewRef = ref<HTMLElement | undefined>();
 const dataRef: Ref<V | null> = ref(null);
+const error = ref<Error>();
+
 const keyViewStyle = ref({ 
   width: props.viewWidths?.keyView ?? defaultViewWidths.keyView,
   ...defaultKeyViewStyle
@@ -26,7 +28,7 @@ const onSelect = async (key: T) => {
   } catch (err) { error.value = err as Error; }
 };
 
-const { items, loading, error } = useScrollLoader(props.loadKeysFn, masterKeyViewRef);
+const { items, loading, scrollError } = useScrollLoader(props.loadKeysFn, masterKeyViewRef);
 </script>
 
 <template>

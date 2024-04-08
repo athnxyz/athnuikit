@@ -44,5 +44,5 @@ export const useExponentialBackoff = <T extends (...args: any[]) => any>() => {
     }
   };
 
-  return { backoff };
+  return { backoff, backoffErr };
 };
