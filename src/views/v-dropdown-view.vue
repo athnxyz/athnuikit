@@ -30,7 +30,7 @@ const implementation = `
       <v-list :items="dropdownDetailListItems"></v-list>
     </v-container>
     
-    <v-container orientation="vertical"">
+    <v-container orientation="vertical">
       <v-title title="example"></v-title>
       <v-dropdown 
         :button="{ message: 'open dropdown' }"
@@ -41,7 +41,7 @@ const implementation = `
 
     <v-container orientation="vertical" border>
       <v-title title="implementation"></v-title>
-      <v-input v-model:value="implementation" :disabled="true"></v-input>
+      <v-input v-model:value="implementation" disabled></v-input>
     </v-container>
 
   </v-container>

@@ -22,12 +22,12 @@
       border-radius: 0.25rem;
 
       &:hover {
-        box-shadow: 0 0 2px var(--v-boxshadow);
+        box-shadow: 0 0 4px var(--v-boxshadow);
         cursor: pointer;
       }
     
       &:active {
-        box-shadow: 0 0 4px var(--v-boxshadow);
+        box-shadow: 0 0 8px var(--v-boxshadow);
       }
 
       .v-master-view-key-slot {
@@ -48,5 +48,5 @@
 .v-master-view-selection {
   background-color: var(--v-boxshadow);
   opacity: 0.5;
-  box-shadow: 0 0 2px var(--v-boxshadow);
+  box-shadow: 0 0 4px var(--v-boxshadow);
 }

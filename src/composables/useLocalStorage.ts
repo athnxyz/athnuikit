@@ -12,21 +12,18 @@ export const useLocalStorage = <PRF extends string, KEY extends string>() => {
 
   const setItem = (prefix: PRF, key: KEY, value: string) => {
     const prefixedKey = genPrefixedKey(prefix, key);
-
     localStorageRef.value.setItem(prefixedKey, value);
     updateValueForKeyMap.value[prefixedKey] = true;
   };
 
   const getItem = (prefix: PRF, key: KEY): string | undefined => {
     const prefixedKey = genPrefixedKey(prefix, key); 
-
     const value = localStorageRef.value.getItem(prefixedKey);
     if (value) return value;
   };
 
   const deleteItem = (prefix: PRF, key: KEY) => {
     const prefixedKey = genPrefixedKey(prefix, key);
-
     localStorageRef.value.removeItem(prefixedKey);
     updateValueForKeyMap.value[prefixedKey] = true;
   }

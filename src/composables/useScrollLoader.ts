@@ -12,7 +12,6 @@ export const usePaginatedScrollLoader = <T>(
   const error: Ref<Error | null> = ref(null);
 
   const onPaginate = async () => {
-    console.log('here?')
     if (! scrollableElementRef.value || loading.value) return;
 
     const element = scrollableElementRef.value;
@@ -54,10 +53,7 @@ export const usePaginatedScrollLoader = <T>(
   })
 
   watchEffect(async () => {
-    console.log('new val', scrollableElementRef.value)
-    // if (oldVal) oldVal.removeEventListener('scroll', onPaginate);
-    if (scrollableElementRef.value) { 
-      // items.value = await loadPageFn(currPage.value) ?? [];
+    if (scrollableElementRef.value) {
       scrollableElementRef.value.addEventListener('scroll', onPaginate);
     }
   });

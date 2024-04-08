@@ -5,7 +5,7 @@ type SidebarButtonProps = Omit<ButtonProps<any>, 'option' | 'action'>;
 
 export interface SidebarProps  {
   button: SidebarButtonProps;
-  position: 'left' | 'right';
+  position?: 'left' | 'right';
 }
 
 export const defaultSidebarProps: Pick<SidebarProps, 'position'> = {

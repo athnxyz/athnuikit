@@ -32,7 +32,8 @@ const { items, loading, error } = usePaginatedScrollLoader(props.loadKeysFn, mas
 
   <div class="v-master-view">
 
-    <div ref="masterKeyViewRef" class="v-master-view-keys" 
+    <div ref="masterKeyViewRef" 
+      class="v-master-view-keys" 
       :style="keyViewStyle">
 
       <v-text v-if="loading">loading keys...</v-text>

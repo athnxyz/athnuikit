@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { viewContainerStyle, innerContainerStyle } from '@uikit/views/viewstyles';
 
 const buttonDetailListItems = ref([
   { key: 'v-model:option: T', content: 'the selectable action on the button' },
