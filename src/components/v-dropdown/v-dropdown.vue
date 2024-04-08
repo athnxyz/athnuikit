@@ -9,9 +9,8 @@ import type { DropdownEmits, DropdownProps, DropdownOption } from '@uikit/compon
 defineProps<DropdownProps>();
 const emit = defineEmits<DropdownEmits<T>>();
 
-const dropdownButton: Ref<HTMLElement | null> = ref(null);
-const dropdownContainer: Ref<HTMLElement | null> = ref(null);
-
+const dropdownButton = ref<HTMLElement | undefined>();
+const dropdownContainer = ref<HTMLElement | undefined>();
 const isOpen: Ref<boolean> = ref(false);
 
 const toggleDropdown = (isOpen: boolean) => ! isOpen;

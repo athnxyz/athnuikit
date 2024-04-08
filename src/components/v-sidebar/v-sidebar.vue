@@ -6,10 +6,11 @@ import { every } from 'lodash';
 import type { SidebarProps } from '@uikit/components/v-sidebar/v-sidebar.types';
 import { defaultSidebarProps } from '@uikit/components/v-sidebar/v-sidebar.types';
 
+
 withDefaults(defineProps<SidebarProps>(), defaultSidebarProps);
 
-const sidebarButton: Ref<HTMLElement | null> = ref(null);
-const sidebarContainer: Ref<HTMLElement | null> = ref(null);
+const sidebarButton = ref<HTMLElement | undefined>();
+const sidebarContainer = ref<HTMLElement | undefined>();
 const isOpen: Ref<boolean> = ref(false);
 
 const toggleSidebar = (isOpen: boolean) => ! isOpen;

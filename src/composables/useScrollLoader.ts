@@ -4,12 +4,12 @@ import { ref, watchEffect, onMounted, onUnmounted } from 'vue';
 
 export const useScrollLoader = <T>(
   loadPageFn: (page: number) => Promise<T[]>,
-  scrollableElementRef: Ref<HTMLElement | null>
+  scrollableElementRef: Ref<HTMLElement | undefined>
 ) => {
   const items: Ref<T[]> = ref([]);
   const currPage: Ref<number> = ref(0);
   const loading: Ref<boolean> = ref(false);
-  const error: Ref<Error | null> = ref(null);
+  const error = ref<Error>();
 
   const onPaginate = async () => {
     if (! scrollableElementRef.value || loading.value) return;
@@ -53,7 +53,7 @@ export const useScrollLoader = <T>(
   });
 
   onMounted(async () => items.value = await loadPageFn(currPage.value));
-  
+
   onUnmounted(() => {
     if (scrollableElementRef.value) scrollableElementRef.value.removeEventListener('scroll', onPaginate);
   });

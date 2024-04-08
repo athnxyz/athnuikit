@@ -10,7 +10,7 @@ const DEFAULT_TIMEOUT = 250;
 export const useExponentialBackoff = <T extends (...args: any[]) => any>() => {
   const depth: Ref<number> = ref(DEFAULT_DEPTH);
   const timeout: Ref<number> = ref(DEFAULT_TIMEOUT);
-  const backoffErr: Ref<Error | null> = ref(null);
+  const backoffErr = ref<Error>();
 
   const backoff = (fn: T, retries: number) => {
     const resetDefaults = () => { 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Ref } from 'vue';
 import { onMounted, ref, watch } from 'vue';
 import { useToast } from 'primevue/usetoast';
 
@@ -9,7 +10,7 @@ import { defaultNotificationProps } from '@uikit/components/v-notification/v-not
 const props = withDefaults(defineProps<NotificationProps>(), defaultNotificationProps);
 
 const toast = useToast();
-const firstUpdateComplete = ref(false);
+const firstUpdateComplete: Ref<boolean> = ref(false);
 
 onMounted(() => {
   watch(

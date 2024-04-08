@@ -10,7 +10,7 @@ import { useScrollLoader } from '@uikit/composables/useScrollLoader';
 const props = defineProps<MasterViewProps<T, V>>();
 const emit = defineEmits<MasterViewEmits<T>>();
 
-const masterKeyViewRef = ref(null);
+const masterKeyViewRef = ref<HTMLElement | undefined>();
 const dataRef: Ref<V | null> = ref(null);
 const keyViewStyle = ref({ 
   width: props.viewWidths?.keyView ?? defaultViewWidths.keyView,
