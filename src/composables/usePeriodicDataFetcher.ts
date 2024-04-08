@@ -15,7 +15,7 @@ export const usePeriodicDataFetch = <T>(timespanInMs: number, fetcher: Ref<(() =
     try { 
       const resp = await fetcher.value();
       if (resp) data.value = resp
-    } catch (err: any) {
+    } catch (err) {
       error.value = err as Error;
     } finally { loading.value = false; }
   };
