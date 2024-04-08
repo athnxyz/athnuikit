@@ -1,44 +1,28 @@
+@import '@uikit/v-common.scss';
+
 #app {
   font-family: 'Roboto Mono';
   font-size: 14px;
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
-  margin: 0 auto;
+  display: flex;
+  font-weight: normal;
   background-image: linear-gradient(
     to bottom right, 
     var(--v-background-mute), 
     var(--color-brand-title)
   );
-  position: relative;
-  overflow: hidden;
-  font-weight: normal;
 
   .app-container {
-    height: 100vh;
-    width: 100vw;
+    @extend .flex-vertical;
+
+    margin: 0.25rem;
+    flex: 1 1 auto;
 
     .app-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-grow: 1;
-      overflow-y: scroll;
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-
-      &::-webkit-scrollbar {
-        background: transparent;
-        width: 8px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: transparent;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: var(--v-background-soft);
-        border-radius: 0.5rem;
-      }
+      @extend .flex-vertical;
+      overflow-y: hidden;
     }
   }
 }

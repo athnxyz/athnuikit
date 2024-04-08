@@ -6,3 +6,7 @@ export interface NotificationProps {
   timeToLive?: number;
   notificationStyle?: { [style: string]: string }
 }
+
+export const defaultNotificationProps: Pick<NotificationProps, 'timeToLive'> = {
+  timeToLive: 3000
+};

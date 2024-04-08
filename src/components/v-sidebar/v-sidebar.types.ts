@@ -7,3 +7,7 @@ export interface SidebarProps  {
   button: SidebarButtonProps;
   position: 'left' | 'right';
 }
+
+export const defaultSidebarProps: Pick<SidebarProps, 'position'> = {
+  position: 'right'
+};

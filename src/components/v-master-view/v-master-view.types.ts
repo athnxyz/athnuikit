@@ -1,6 +1,6 @@
 export interface MasterViewProps<T, V> {
-  keys: T[];
   selectedKey: T;
+  loadKeysFn(page: number): Promise<T[]>;
   extractKeyFn(keyObj: T): string;
   getDataFn(key: string): Promise<V>;
   viewWidths?: { keyView: string, dataView: string };

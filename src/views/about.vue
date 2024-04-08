@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <v-container orientation="vertical" :border="false">
+  <v-container orientation="vertical">
     <v-title title="about"></v-title>
 
     <v-fade type="single">

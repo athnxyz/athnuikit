@@ -8,6 +8,7 @@
   align-items: flex-start;
   padding: 0.25rem 0.5rem;
   margin: 0.25rem;
+  overflow-y: auto;
 
   .v-list-item {
     @extend .flex-horizontal;

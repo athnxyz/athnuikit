@@ -2,9 +2,10 @@
 import { ref, watch } from 'vue';
 
 import type { InputEmits, InputProps } from '@uikit/components/v-input/v-input.types';
+import { defaultInputProps } from '@uikit/components/v-input/v-input.types';
 
 
-const props = defineProps<InputProps>();
+const props = withDefaults(defineProps<InputProps>(), defaultInputProps);
 const emit = defineEmits<InputEmits>();
 
 const valueRef = ref(props.value);

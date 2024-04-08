@@ -3,29 +3,50 @@
 
 .v-master-view {
   @extend .flex-horizontal;
+
   width: 100%;
+  overflow-y: hidden;
 
   .v-master-view-keys {
     @extend .flex-vertical;
-
+    
     justify-content: flex-start;
     align-items: flex-end;
-    gap: 0.25rem;
+    overflow-y: auto;
 
     .v-master-view-key {
       @extend .flex-horizontal;
-      padding: 0.5rem 0.25rem;
+
+      padding: 0.25rem 0.5rem;
+      margin: 0.25rem;
+      border-radius: 0.25rem;
+
+      &:hover {
+        box-shadow: 0 0 2px var(--v-boxshadow);
+        cursor: pointer;
+      }
+    
+      &:active {
+        box-shadow: 0 0 4px var(--v-boxshadow);
+      }
 
       .v-master-view-key-slot {
         z-index: 1;
       }
     }
-
-    .v-master-view-data {
-      @extend .flex-vertical;
-      
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
   }
+
+  .v-master-view-data {
+    @extend .flex-vertical;
+    
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+}
+
+.v-master-view-selection {
+  background-color: var(--v-boxshadow);
+  opacity: 0.5;
+  box-shadow: 0 0 2px var(--v-boxshadow);
 }

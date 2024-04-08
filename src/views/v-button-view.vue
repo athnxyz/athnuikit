@@ -29,40 +29,25 @@ const implementation = `
 
 <template>
 
-  <v-container 
-    orientation="vertical" 
-    :border="false"
-    :style="viewContainerStyle">
+  <v-container orientation="vertical">
 
-    <v-container
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical" border>
       <v-title title="vbutton"></v-title>
       <v-list :items="buttonDetailListItems"></v-list>
     </v-container>
     
-    <v-container
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
-
+    <v-container orientation="vertical">
       <v-title title="example"></v-title>
-      
       <v-button 
         v-model:option="message"
         :action="handleClick"
         :message="message">
       </v-button>
-
     </v-container>
 
-    <v-container 
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical" border>
       <v-title title="implementation"></v-title>
-      <v-input v-model:value="implementation" :disabled="true"></v-input>
+      <v-input v-model:value="implementation" disabled></v-input>
     </v-container>
 
   </v-container>

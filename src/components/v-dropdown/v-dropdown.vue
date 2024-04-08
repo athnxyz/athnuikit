@@ -50,7 +50,7 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
         :overrideBtnClass="button.overrideBtnClass">
       </v-button>
     </div>
-
+   
     <v-slide-vertical type="single">
       <div v-if="isOpen" ref="dropdownContainer" class="v-dropdown-elements">
         <v-button v-for="o in options"

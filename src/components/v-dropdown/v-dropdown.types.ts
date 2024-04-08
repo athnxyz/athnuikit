@@ -1,7 +1,8 @@
 import type { ButtonProps } from '@uikit/components/v-button/v-button.types';
+import { defaultButtonProps } from '@uikit/components/v-button/v-button.types';
 
 
-type DropdownButtonProps = Omit<ButtonProps<any>, 'option' | 'action'>;
+type DropdownButtonProps = Omit<ButtonProps<boolean>, 'option' | 'action'>;
 
 export interface DropdownOption {
   label: string;
@@ -17,3 +18,7 @@ export interface DropdownProps {
 export interface DropdownEmits<T> {
   (e: 'update:options', selected: DropdownOption): void;
 }
+
+export const defaultDropdownProps: { button: DropdownButtonProps } = {
+  button: defaultButtonProps as DropdownButtonProps
+};

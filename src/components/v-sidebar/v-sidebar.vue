@@ -4,9 +4,9 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { every } from 'lodash';
 
 import type { SidebarProps } from '@uikit/components/v-sidebar/v-sidebar.types';
+import { defaultSidebarProps } from '@uikit/components/v-sidebar/v-sidebar.types';
 
-
-defineProps<SidebarProps>();
+withDefaults(defineProps<SidebarProps>(), defaultSidebarProps);
 
 const sidebarButton: Ref<HTMLElement | null> = ref(null);
 const sidebarContainer: Ref<HTMLElement | null> = ref(null);

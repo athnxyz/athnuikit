@@ -13,3 +13,8 @@ export interface ButtonProps<T> {
 export interface ButtonEmits<T> {
   (e: 'update:option', updatedOption: T): void;
 }
+
+export const defaultButtonProps: Pick<ButtonProps<any>, 'message' | 'color' | 'bgColor'> = {
+  color: 'var(--v-text-primary-invert)',
+  bgColor: 'var(--v-button)'
+}

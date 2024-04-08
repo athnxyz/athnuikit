@@ -2,12 +2,14 @@
 import { ref } from 'vue';
 
 import type { ContainerProps } from '@uikit/components/v-container/v-container.types';
+import { defaultContainerProps } from '@uikit/components/v-container/v-container.types';
 
 
-const props = defineProps<ContainerProps>();
+const props = withDefaults(defineProps<ContainerProps>(), defaultContainerProps);
 const defaultStyle = ref({ 
-  border: props.border ? '2px solid var(--color-border)' : 'none', 
-  'border-radius': '0.25rem' 
+  border: props.border ? '2px solid var(--v-border)' : 'none', 
+  'border-radius': '0.25rem',
+  ...(props.hidden ? { overflow: 'hidden' } : {})
 });
 </script>
 

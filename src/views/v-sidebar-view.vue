@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import { viewContainerStyle, innerContainerStyle } from '@uikit/views/viewstyles';
 
 const sidebarDetailListItems = ref([
   { key: 'button: SidebarButtonProps', content: 'styling and content for the dropdown toggle' },
@@ -20,29 +19,18 @@ const implementation = `
 
 <template>
 
-  <v-container 
-    orientation="vertical" 
-    :border="false"
-    :style="viewContainerStyle">
+  <v-container orientation="vertical">
 
-    <v-container
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical" border>
       <v-title title="vsidebar"></v-title>
       <v-list :items="sidebarDetailListItems"></v-list>
     </v-container>
     
-    <v-container
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical">
 
       <v-title title="example"></v-title>
 
-      <v-sidebar 
-        position="right"
-        :button="{ message: 'show sidebar' }">
+      <v-sidebar :button="{ message: 'show sidebar' }">
         <template #sidebar>
           <v-text>sidebar content!</v-text>
         </template>
@@ -50,12 +38,9 @@ const implementation = `
 
     </v-container>
 
-    <v-container 
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical" border>
       <v-title title="implementation"></v-title>
-      <v-input v-model:value="implementation" :disabled="true"></v-input>
+      <v-input v-model:value="implementation" disabled></v-input>
     </v-container>
 
   </v-container>

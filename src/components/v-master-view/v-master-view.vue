@@ -4,37 +4,40 @@ import { ref } from 'vue';
 
 import type { MasterViewEmits, MasterViewProps } from '@uikit/components/v-master-view/v-master-view.types';
 import { defaultKeyViewStyle, defaultViewWidths } from '@uikit/components/v-master-view/v-master-view.types';
+import { usePaginatedScrollLoader } from '@uikit/composables/useScrollLoader';
 
 
 const props = defineProps<MasterViewProps<T, V>>();
 const emit = defineEmits<MasterViewEmits<T>>();
 
+const masterKeyViewRef = ref(null);
 const dataRef: Ref<V | null> = ref(null);
-const error: Ref<Error | null> = ref(null);
-
 const keyViewStyle = ref({
   width: props.viewWidths?.keyView ?? defaultViewWidths.keyView,
   ...defaultKeyViewStyle
 });
 
 const onSelect = async (key: T) => {
-  const extractedKey = props.extractKeyFn(key);
   try {
+    const extractedKey = props.extractKeyFn(key);
     dataRef.value = await props.getDataFn(extractedKey);
     emit('update:selectedKey', key);
   } catch (err) { error.value = err as Error; }
 };
+
+const { items, loading, error } = usePaginatedScrollLoader(props.loadKeysFn, masterKeyViewRef)
 </script>
 
 <template>
 
   <div class="v-master-view">
 
-    <div class="v-master-view-keys" 
+    <div ref="masterKeyViewRef" class="v-master-view-keys" 
       :style="keyViewStyle">
 
-      <div v-for="key of keys" 
-        :class="selectedKey === key ? 'v-master-view-key' : 'v-master-view-key'"
+      <v-text v-if="loading">loading keys...</v-text>
+      <div v-for="key of items" 
+        :class="selectedKey === key ? 'v-master-view-key v-master-view-selection' : 'v-master-view-key'"
         @click="onSelect(key)">
         <div class="v-master-view-key-slot">
           <slot name="keyview" :key="key"></slot>

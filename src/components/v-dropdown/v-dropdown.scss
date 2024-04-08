@@ -15,9 +15,9 @@
   .v-dropdown-elements {
     @extend .flex-vertical;
 
+    flex-grow: 1;
     position: absolute;
     min-width: 150px;
-    height: fit-content;
     align-items: center;
     z-index: 1001;
     overflow-y: auto;

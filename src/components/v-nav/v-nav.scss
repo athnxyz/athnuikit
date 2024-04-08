@@ -4,7 +4,6 @@
 .v-nav-container {
   @extend .flex-horizontal;
 
-  width: 100%;
   max-height: fit-content;
   background-color: var(--v-container);
   justify-content: space-between;

@@ -4,6 +4,7 @@
 .v-container {
   padding: 0.5rem;
   margin: 0.25rem;
+  width: 100%;
 }
 
 .v-container-vertical {
@@ -18,5 +19,6 @@
   @extend .flex-horizontal;
   @extend .v-container;
 
+  flex: 1 1 auto;
   align-items: center;
 }

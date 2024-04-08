@@ -2,8 +2,6 @@
 import type { Ref } from 'vue';
 import { ref } from 'vue';
 
-import { viewContainerStyle, innerContainerStyle } from '@uikit/views/viewstyles';
-
 
 const dropdownDetailListItems = ref([
   { key: 'button: DropdownButtonProps', content: 'styling and content for the dropdown toggle' },
@@ -25,39 +23,23 @@ const implementation = `
 
 <template>
   
-  <v-container 
-    orientation="vertical" 
-    :border="false"
-    :style="viewContainerStyle">
+  <v-container orientation="vertical">
 
-    <v-container
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical" border>
       <v-title title="vdropdown"></v-title>
       <v-list :items="dropdownDetailListItems"></v-list>
     </v-container>
     
-    <v-container
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
-
+    <v-container orientation="vertical"">
       <v-title title="example"></v-title>
-      
       <v-dropdown 
         :button="{ message: 'open dropdown' }"
         :options="options">
       </v-dropdown>
-
-      <v-text v-if="selected">selected {{ selected }}</v-text>
-
+      <v-text>selected {{ selected ?? 'N/A' }}</v-text>
     </v-container>
 
-    <v-container 
-      orientation="vertical" 
-      :border="false"
-      :style="innerContainerStyle">
+    <v-container orientation="vertical" border>
       <v-title title="implementation"></v-title>
       <v-input v-model:value="implementation" :disabled="true"></v-input>
     </v-container>

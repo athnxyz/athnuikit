@@ -1,6 +1,11 @@
-export interface ContainerProps {
+export type ContainerProps = {
   orientation: 'vertical' | 'horizontal';
   border?: boolean;
-  effects?: string[];
+  hidden?: boolean;
   style?: { [style: string]: string };
+}
+
+export const defaultContainerProps: Pick<ContainerProps, 'border' | 'hidden'> = {
+  border: false,
+  hidden: true
 }

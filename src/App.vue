@@ -19,15 +19,13 @@ const routerLinks = ref([
 <template>
 
   <div class="app-container">
+    <v-nav
+      :title="{ title: 'vuikit', subTitle: 'a vue component collection' }"
+      :routerLinks="routerLinks">
+    </v-nav>
+
     <div class="app-content">
-
-      <v-nav
-        :title="{ title: 'vuikit', subTitle: 'a vue component collection' }"
-        :routerLinks="routerLinks">
-      </v-nav>
-
       <RouterView></RouterView>
-
     </div>
   </div>
 

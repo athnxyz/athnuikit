@@ -2,19 +2,20 @@
 import { ref } from 'vue';
 
 import type { ButtonEmits, ButtonProps } from '@uikit/components/v-button/v-button.types';
+import { defaultButtonProps } from '@uikit/components/v-button/v-button.types';
 
 
-const props = defineProps<ButtonProps<T>>();
+const props = withDefaults(defineProps<ButtonProps<T>>(), defaultButtonProps);
 const emit = defineEmits<ButtonEmits<T>>();
 
-const buttonClick = (option: T) => emit('update:option', props.action(option));
-
 const buttonStyle = ref({ 
-  color: ! props?.color && ! props?.overrideBtnClass ? 'var(--v-text-primary-invert)' : props.color, 
-  'background-color': ! props?.bgColor && ! props?.overrideBtnClass ? 'var(--v-button)' : props.bgColor, 
+  color: ! props?.overrideBtnClass ? props.color : undefined, 
+  'background-color': ! props?.overrideBtnClass ? props.bgColor : undefined, 
   'font-size': props?.fontSize, 
   'box-shadow': props?.boxShadow 
 });
+
+const buttonClick = (option: T) => emit('update:option', props.action(option));
 </script> 
 
 <template>
