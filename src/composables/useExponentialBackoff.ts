@@ -31,13 +31,11 @@ export const useExponentialBackoff = <T extends (...args: any[]) => any>() => {
             throw err;
           }
   
-          const d = depth.value;
-          const currTimeout = timeout.value
-          
-          timeout.value = ((): number => 2 ** (d - 1) * currTimeout)();
+          await sleep(timeout.value);
+
+          timeout.value = 2 ** (depth.value) * DEFAULT_TIMEOUT;
           depth.value++;
   
-          await sleep(timeout.value);
           return await recursiveBackoff();
         }
       }

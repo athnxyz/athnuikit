@@ -48,16 +48,12 @@ export const useScrollLoader = <T>(
     }
   }
 
-  onMounted(async () => {
-    items.value = await loadPageFn(currPage.value);
-  })
-
   watchEffect(async () => {
-    if (scrollableElementRef.value) {
-      scrollableElementRef.value.addEventListener('scroll', onPaginate);
-    }
+    if (scrollableElementRef.value) scrollableElementRef.value.addEventListener('scroll', onPaginate);
   });
 
+  onMounted(async () => items.value = await loadPageFn(currPage.value));
+  
   onUnmounted(() => {
     if (scrollableElementRef.value) scrollableElementRef.value.removeEventListener('scroll', onPaginate);
   });
