@@ -34,6 +34,13 @@
         z-index: 1;
       }
     }
+
+    .spinner {
+      padding: 0.5rem;
+      margin: 0.25rem;
+      font-size: 18px;
+      opacity: 0.5;
+    }
   }
 
   .v-master-view-data {

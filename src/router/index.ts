@@ -7,6 +7,7 @@ import vcontainerview from '@uikit/views/v-container-view.vue';
 import vmasterviewv from '@uikit/views/v-master-view.vue'
 import vdropdownview from '@uikit/views/v-dropdown-view.vue';
 import vnavview from '@uikit/views/v-nav-view.vue';
+import vpathview from '@uikit/views/v-path-view.vue';
 import vsidebarview from '@uikit/views/v-sidebar-view.vue';
 import vtagview from '@uikit/views/v-tag-view.vue';
 import vtitleview from '@uikit/views/v-title-view.vue';
@@ -49,6 +50,11 @@ const router = createRouter({
       path: '/vnav',
       name: 'vnav',
       component: vnavview
+    },
+    {
+      path: '/vpath',
+      name: 'vpath',
+      component: vpathview
     },
     {
       path: '/vsidebar',

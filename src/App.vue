@@ -11,6 +11,7 @@ const routerLinks = ref([
   { path: '/vdropdown', label: 'vdropdown' },
   { path: '/vmasterview', label: 'vmasterview' },
   { path: '/vnav', label: 'vnav' },
+  { path: '/vpath', label: 'vpath' },
   { path: '/vsidebar', label: 'vsidebar' },
   { path: '/vtag', label: 'vtag' },
   { path: '/vtitle', label: 'vtitle' }

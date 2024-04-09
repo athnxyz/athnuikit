@@ -4,6 +4,7 @@ import { ref } from 'vue';
 
 import type { MasterViewEmits, MasterViewProps } from '@uikit/components/v-master-view/v-master-view.types';
 import { defaultKeyViewStyle, defaultViewWidths } from '@uikit/components/v-master-view/v-master-view.types';
+import { useDebounce } from '@uikit/composables/useDebounce';
 import { useScrollLoader } from '@uikit/composables/useScrollLoader';
 
 
@@ -19,6 +20,9 @@ const keyViewStyle = ref({
   ...defaultKeyViewStyle
 });
 
+const { debounce } = useDebounce<(key: T) => Promise<void>>();
+const { items, loading, scrollError } = useScrollLoader(props.loadKeysFn, masterKeyViewRef);
+
 const onSelect = async (key: T) => {
   try {
     const extractedKey = props.extractKeyFn(key);
@@ -28,7 +32,7 @@ const onSelect = async (key: T) => {
   } catch (err) { error.value = err as Error; }
 };
 
-const { items, loading, scrollError } = useScrollLoader(props.loadKeysFn, masterKeyViewRef);
+const debounceOnSelect = debounce(onSelect, 200);
 </script>
 
 <template>
@@ -39,14 +43,18 @@ const { items, loading, scrollError } = useScrollLoader(props.loadKeysFn, master
       class="v-master-view-keys" 
       :style="keyViewStyle">
 
-      <v-text v-if="loading">loading keys...</v-text>
       <div v-for="key of items" 
         :class="selectedKey === key ? 'v-master-view-key v-master-view-selection' : 'v-master-view-key'"
-        @click="onSelect(key)">
+        @click="debounceOnSelect(key)">
         <div class="v-master-view-key-slot">
           <slot name="keyview" :key="key"></slot>
         </div>
       </div>
+
+      <font-awesome-icon v-if="loading" 
+        class="spinner" 
+        icon="fa-solid fa-spinner">
+      </font-awesome-icon>
 
     </div>
 

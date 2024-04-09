@@ -1,8 +1,8 @@
 import type { Ref } from 'vue';
 import { ref } from 'vue';
 
+import type { LocalStorageKey } from '@uikit/types/LocalStorage';
 
-type LocalStorageKey <PRF extends string, KEY extends string> = `${PRF}-${KEY}`;
 
 const genPrefixedKey = <PRF extends string, KEY extends string>(prefix: PRF, key: KEY): LocalStorageKey<PRF, KEY> => `${prefix}-${key}`;
 

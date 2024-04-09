@@ -55,6 +55,35 @@ import { useLocalStorage } from '@uikit/composables/useLocalStorage';
 const { localStorageRef, updateValueForKeyMap, setItem, getItem, deleteItem, clear } = useLocalStorage<T, V>();
 `;
 
+const usePathDataLoaderDetailsList = ref([
+  { key: 'rootData: T', content: 'the root data of the path' },
+  { key: 'extractIdFn: (data: T) => string', content: 'function to extract key from data' },
+  { key: 'extractPrevIdFn: (data: T) => string | null', content: 'function to extract reference to previous node in path' },
+  { key: 'extractLinkedNodes: (data: T) => string[] | null', content: 'function to extract references to possible next path' },
+  { key: 'selectDataFn: (id: string) => Promise<T>', content: 'function to asynchronously load data for next node in path' },
+]);
+
+const usePathDataLoaderImpl = `
+import { usePathDataLoader} from '@uikit/composables/usePathDataLoader';
+
+const rootData = ref<T>(/* needs to be populated, make network request or other op */);
+const extractIdFn = (data: T) => { /* get identifier from data object */ };
+const extractPrevIdFn = (data: T) => { /* get reference id from current data object for previous */ };
+const extractLinkedNodes = (data: T) => { /* get references to potential child objects */ };
+const selectDataFn = async = (id: string) => { /* fetch selected data asynchronously */ };
+
+/*
+  path exposes ref to entire current path as Ref<PathNode<T>[]>
+  currNode exposes ref to current selected data
+  pathLoading exposes ref to loading state of data
+  pathErr exposes a ref for Error objects on max retries load failure
+  selectNode(selectedId) is a wrapper function to update path state on interaction
+*/
+const { path, currNode, pathLoading, pathErr, selectNode } = usePathDataLoader(
+  rootData, extractIdFn, extractPrevIdFn, extractLinkedNodes, selectDataFn
+);
+`;
+
 const usePeriodicDataFetchDetailsList = ref([
   { key: 'fetcher: Ref<(() => Promise<T>) | undefined>', content: 'the data fetch function' },
   { key: 'timespanInMs: number', content: 'the length of time for a period' }
@@ -112,6 +141,12 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
       <v-title title="useLocalStorage"></v-title>
       <v-list :items="useLocalStorageDetailsList"></v-list>
       <v-input v-model:value="useLocalStorageImpl" disabled></v-input>
+    </v-container>
+
+    <v-container orientation="vertical" border>
+      <v-title title="usePathDataLoader"></v-title>
+      <v-list :items="usePathDataLoaderDetailsList"></v-list>
+      <v-input v-model:value="usePathDataLoaderImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>

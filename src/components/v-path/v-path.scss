@@ -1,0 +1,30 @@
+@import '@uikit/v-common.scss';
+
+
+.v-path {
+  @extend .flex-horizontal;
+
+  .v-path-nodes {
+    @extend .flex-horizontal;
+    overflow-x: auto;
+
+    .v-node {
+      @extend .flex-vertical;
+
+      width: max-content;
+      justify-content: flex-start;
+      border-left: 2px solid (--v-border);
+      overflow-y: auto;
+    }
+  }
+
+  .v-path-node-data {
+    @extend .flex-vertical;
+
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.25 0.5rem;
+    margin: 0.25rem;
+    border-left: 2px solid (--v-border);
+  }
+}

@@ -6,8 +6,9 @@ import {
   faCircle,
   faClose,
   faSliders,
+  faSpinner,
   faToggleOff,
-  faToggleOn,
+  faToggleOn
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -19,6 +20,7 @@ class FontAwesomeLoader {
       faCircle,
       faClose,
       faSliders,
+      faSpinner,
       faToggleOff,
       faToggleOn,
     ];
