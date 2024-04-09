@@ -1,4 +1,5 @@
-import { type Ref, ref, onUnmounted, watch } from 'vue';
+import type { Ref } from 'vue';
+import { ref, onUnmounted, watch } from 'vue';
 
 
 export const usePeriodicDataFetch = <T>(fetcher: Ref<(() => Promise<T>) | undefined>, timespanInMs: number) => {
