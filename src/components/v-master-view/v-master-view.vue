@@ -1,24 +1,27 @@
 <script setup lang="ts" generic="T, V">
 import type { Ref } from 'vue';
-import { ref } from 'vue';
+import { ref, watch, onMounted, onUnmounted } from 'vue';
 
 import type { MasterViewEmits, MasterViewProps } from '@uikit/components/v-master-view/v-master-view.types';
 import { defaultKeyViewStyle, defaultViewWidths } from '@uikit/components/v-master-view/v-master-view.types';
 import { useDebounce } from '@uikit/composables/useDebounce';
+import { useResize } from '@uikit/composables/useResize';
 import { useScrollLoader } from '@uikit/composables/useScrollLoader';
 
 
 const props = defineProps<MasterViewProps<T, V>>();
 const emit = defineEmits<MasterViewEmits<T>>();
 
+const masterViewRef = ref<HTMLElement | undefined>();
 const masterKeyViewRef = ref<HTMLElement | undefined>();
-const dataRef: Ref<V | null> = ref(null);
-const error = ref<Error>();
-
-const keyViewStyle = ref({ 
+const keyViewHeight = ref<number>(0);
+  const keyViewStyle = ref({ 
   width: props.viewWidths?.keyView ?? defaultViewWidths.keyView,
   ...defaultKeyViewStyle
 });
+
+const dataRef: Ref<V | null> = ref(null);
+const error = ref<Error>();
 
 const { debounce } = useDebounce<(key: T) => Promise<void>>();
 const { items, loading, scrollError } = useScrollLoader(props.loadKeysFn, masterKeyViewRef);
@@ -33,11 +36,33 @@ const onSelect = async (key: T) => {
 };
 
 const debounceOnSelect = debounce(onSelect, 200);
+
+const observer = new ResizeObserver(entries => {
+  for (let entry of entries) { keyViewHeight.value = entry.target.scrollHeight; }
+});
+
+onMounted(() => {
+  const { updateHeight } = useResize(masterViewRef);
+
+  if (masterKeyViewRef.value) { 
+    observer.observe(masterKeyViewRef.value);
+    watch(keyViewHeight, height => {
+      if (masterViewRef.value && height) { 
+        if (! masterViewRef.value?.clientHeight || masterViewRef.value?.clientHeight >= height) updateHeight(Math.floor(height * 0.95)) 
+      }
+    });
+  }
+});
+
+onUnmounted(() => {
+  if (masterKeyViewRef.value) observer.unobserve(masterKeyViewRef.value);
+});
 </script>
 
 <template>
 
-  <div class="v-master-view">
+  <div ref="masterViewRef"
+    class="v-master-view">
 
     <div ref="masterKeyViewRef" 
       class="v-master-view-keys" 

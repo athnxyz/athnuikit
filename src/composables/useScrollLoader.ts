@@ -47,9 +47,7 @@ export const useScrollLoader = <T>(loadPageFn: (page: number) => Promise<T[]>, s
     if (scrollableElementRef.value) scrollableElementRef.value.addEventListener('scroll', onPaginate);
   });
 
-  onMounted(async () => { 
-    items.value = await loadPageFn(currPage.value) 
-  });
+  onMounted(async () => { items.value = await loadPageFn(currPage.value); });
 
   onUnmounted(() => {
     if (scrollableElementRef.value) scrollableElementRef.value.removeEventListener('scroll', onPaginate);

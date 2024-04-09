@@ -97,13 +97,14 @@ const implementation = ref(`
 
 <template>
   
-  <v-container orientation="vertical" overflow="hidden">
+  <v-container orientation="vertical" overflow="auto">
 
     <v-container orientation="vertical" border>
       <v-title title="vmasterview"></v-title>
       <v-list :items="masterViewDetailListItems"></v-list>
     </v-container>
 
+    
     <v-master-view
       v-model:selectedKey="selectedKey"
       :loadKeysFn="loadKeysFn"

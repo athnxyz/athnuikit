@@ -7,7 +7,7 @@ export const useDebounce = <T extends (...args: any[]) => any>() => {
   const debounceErr = ref<Error>();
 
   const debounce = (actionFn: T, delay: number) => {
-    return async (...args: Parameters<T>) => {
+    return (...args: Parameters<T>) => {
       const debounceCallback = async () => {
         try {
           await actionFn(...args);

@@ -5,8 +5,7 @@
   @extend .flex-horizontal;
 
   width: 100%;
-  overflow-y: hidden;
-
+  
   .v-master-view-keys {
     @extend .flex-vertical;
     
@@ -49,6 +48,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow-y: auto;
+    min-height: 0;
   }
 }
 
