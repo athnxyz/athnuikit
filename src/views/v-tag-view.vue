@@ -26,12 +26,13 @@ const implementation = ref(`
     </v-container>
     
     <v-container orientation="vertical">
-      <v-title title="example"></v-title>
+
       <v-tag 
-        :content="{ text: 'test' }"
+        :content="{ text: 'example' }"
         color="var(--v-text-primary)"
         bgColor="var(--v-soft-green)">
       </v-tag>
+
     </v-container>
 
     <v-container orientation="vertical" border>

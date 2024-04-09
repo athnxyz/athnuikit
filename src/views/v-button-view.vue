@@ -37,12 +37,13 @@ const implementation = ref(`
     </v-container>
     
     <v-container orientation="vertical">
-      <v-title title="example"></v-title>
+
       <v-button 
         v-model:option="message"
         :action="handleClick"
         :message="message">
       </v-button>
+      
     </v-container>
 
     <v-container orientation="vertical" border>

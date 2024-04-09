@@ -1,33 +1,28 @@
 @import '@uikit/v-common.scss';
 
+
 #app {
-  font-family: 'Roboto Mono';
   font-size: 14px;
   margin: 0 auto;
   height: 100vh;
   width: 100vw;
-  display: flex;
   font-weight: normal;
   background-image: linear-gradient(
     to bottom right, 
     var(--v-background-mute), 
-    var(--color-brand-title)
+    var(--v-container)
   );
 
   .app-container {
     @extend .flex-vertical;
-
-    flex: 1 1 auto;
     height: 100%;
-    width: 100%;
 
     .app-content {
       @extend .flex-vertical;
 
-      flex: 1 1 auto;
+      flex: 1;
       margin: 0.25rem;
-      overflow-y: hidden;
-      overflow-x: hidden;
+      overflow-y: auto;
     }
   }
 }

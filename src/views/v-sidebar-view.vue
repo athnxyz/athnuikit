@@ -8,12 +8,12 @@ const sidebarDetailListItems = ref([
 ]);
 
 const implementation = ref(`
-<v-sidebar 
-  position="right"
-  :button="{ message: 'show sidebar' }">
+<v-sidebar :button="{ message: 'show sidebar' }">
+        
   <template #sidebar>
     <v-text>sidebar content!</v-text>
   </template>
+
 </v-sidebar>
 `);
 </script>
@@ -28,13 +28,13 @@ const implementation = ref(`
     </v-container>
     
     <v-container orientation="vertical">
-
-      <v-title title="example"></v-title>
-
+      
       <v-sidebar :button="{ message: 'show sidebar' }">
+
         <template #sidebar>
           <v-text>sidebar content!</v-text>
         </template>
+
       </v-sidebar>
 
     </v-container>

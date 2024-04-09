@@ -40,9 +40,11 @@ const implementation = ref(`
   :extractPrevIdFn="extractPrevIdFn"
   :extractLinkedNodes="extractLinkedNodes"
   :selectDataFn="selectDataFn">
+
   <template #nodeDataView="{ data }">
-    <v-text>{{ JSON.stringify(data.data) }}</v-text>
+    <v-text><pre>{{ data }}</pre></v-text>
   </template>
+  
 </v-path>
 `);
 </script>
@@ -51,26 +53,25 @@ const implementation = ref(`
   
   <v-container orientation="vertical" overflow="auto">
 
-    <v-container orientation="vertical" border>
+    <v-container orientation="vertical">
       <v-title title="vpath"></v-title>
       <v-list :items="pathDetailListItems"></v-list>
     </v-container>
     
-    <v-container orientation="vertical">
-      <v-title title="example"></v-title>
-      <v-path
-        :rootData="data[0]"
-        :extractIdFn="extractIdFn"
-        :extractPrevIdFn="extractPrevIdFn"
-        :extractLinkedNodes="extractLinkedNodes"
-        :selectDataFn="selectDataFn">
-        <template #nodeDataView="{ data }">
-          <v-text><pre>{{ data }}</pre></v-text>
-        </template>
-      </v-path>
-    </v-container>
+    <v-path
+      :rootData="data[0]"
+      :extractIdFn="extractIdFn"
+      :extractPrevIdFn="extractPrevIdFn"
+      :extractLinkedNodes="extractLinkedNodes"
+      :selectDataFn="selectDataFn">
 
-   <v-container orientation="vertical" border>
+      <template #nodeDataView="{ data }">
+        <v-text><pre>{{ data }}</pre></v-text>
+      </template>
+
+    </v-path>
+
+   <v-container orientation="vertical">
       <v-title title="implementation"></v-title>
       <v-input v-model:value="implementation" disabled></v-input>
     </v-container>

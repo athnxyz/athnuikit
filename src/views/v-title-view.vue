@@ -19,8 +19,9 @@ const implementation = ref(`<v-title title="this is a title" subTitle="this is a
     </v-container>
     
     <v-container orientation="vertical">
-      <v-title title="example"></v-title>
+
       <v-title title="this is a title" subTitle="this is a sub title"></v-title>
+
     </v-container>
 
     <v-container orientation="vertical" border>

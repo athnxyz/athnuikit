@@ -5,7 +5,7 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 
 export default defineConfig({
-  base: 'vuikit',
+  base: '/vuikit',
   plugins: [
     vue(),
     VueDevTools(),

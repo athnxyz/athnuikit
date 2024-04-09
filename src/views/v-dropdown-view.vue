@@ -32,12 +32,14 @@ const implementation = ref(`
     </v-container>
     
     <v-container orientation="vertical">
-      <v-title title="example"></v-title>
+
       <v-dropdown 
         :button="{ message: 'open dropdown' }"
         :options="options">
       </v-dropdown>
+      
       <v-text>selected {{ selected ?? 'N/A' }}</v-text>
+
     </v-container>
 
     <v-container orientation="vertical" border>

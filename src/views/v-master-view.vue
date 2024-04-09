@@ -82,40 +82,43 @@ const implementation = ref(`
   :loadKeysFn="loadKeysFn"
   :extractKeyFn="extractKeyFn"
   :getDataFn="getDataFn">
+
   <template #keyview="{ key }">
     <v-text>{{ key.content }}</v-text>
   </template>
+
   <template #dataview="{ data }">
     <v-text>{{ data }}</v-text>
   </template>
+
 </v-master-view>
 `);
 </script>
 
 <template>
   
-  <v-container orientation="vertical" overflow="auto">
+  <v-container orientation="vertical" overflow="hidden">
 
     <v-container orientation="vertical" border>
       <v-title title="vmasterview"></v-title>
       <v-list :items="masterViewDetailListItems"></v-list>
     </v-container>
-    
-    <v-container orientation="vertical" overflow="hidden">
-      <v-title title="example"></v-title>
-      <v-master-view
-        v-model:selectedKey="selectedKey"
-        :loadKeysFn="loadKeysFn"
-        :extractKeyFn="extractKeyFn"
-        :getDataFn="getDataFn">
-        <template #keyview="{ key }">
-          <v-text>{{ key.content }}</v-text>
-        </template>
-        <template #dataview="{ data }">
-          <v-text>{{ data }}</v-text>
-        </template>
-      </v-master-view>
-    </v-container>
+
+    <v-master-view
+      v-model:selectedKey="selectedKey"
+      :loadKeysFn="loadKeysFn"
+      :extractKeyFn="extractKeyFn"
+      :getDataFn="getDataFn">
+
+      <template #keyview="{ key }">
+        <v-text>{{ key.content }}</v-text>
+      </template>
+
+      <template #dataview="{ data }">
+        <v-text>{{ data }}</v-text>
+      </template>
+
+    </v-master-view>
 
     <v-container orientation="vertical" border>
       <v-title title="implementation"></v-title>
