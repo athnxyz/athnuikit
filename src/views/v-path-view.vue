@@ -52,7 +52,7 @@ const implementation = `
   <v-container orientation="vertical" overflow="auto">
 
     <v-container orientation="vertical" border>
-      <v-title title="v"></v-title>
+      <v-title title="vpath"></v-title>
       <v-list :items="pathDetailListItems"></v-list>
     </v-container>
     
@@ -65,7 +65,7 @@ const implementation = `
         :extractLinkedNodes="extractLinkedNodes"
         :selectDataFn="selectDataFn">
         <template #nodeDataView="{ data }">
-          <v-text>{{ JSON.stringify(data.data) }}</v-text>
+          <v-text><pre>{{ data }}</pre></v-text>
         </template>
       </v-path>
     </v-container>

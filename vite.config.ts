@@ -5,13 +5,13 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 
 
 export default defineConfig({
+  base: 'vuikit',
   plugins: [
     vue(),
     VueDevTools(),
   ],
   resolve: {
     alias: {
-      // '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@uikit': fileURLToPath(new URL('./src', import.meta.url)),
     }
   }
