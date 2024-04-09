@@ -14,10 +14,14 @@ defineProps<NavProps>();
     </div>
 
     <div class="v-nav-router">
-      <RouterLink v-for="route in routerLinks" class="v-nav-router-link" 
-        :to="route.path">
-        {{ route.label }}
-      </RouterLink>
+      <v-sidebar :button="{ icon: 'fa-solid fa-list', overrideBtnClass: 'v-nav-router-button' }">
+        <template #sidebar>
+          <RouterLink v-for="route in routerLinks" class="v-nav-router-link" 
+            :to="route.path">
+            {{ route.label }}
+          </RouterLink>
+        </template>
+      </v-sidebar>
     </div>
 
     <div class="v-nav-actions">

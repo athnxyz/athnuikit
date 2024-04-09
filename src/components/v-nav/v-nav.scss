@@ -23,9 +23,31 @@
     @extend .flex-horizontal;
 
     flex-grow: 1;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    overflow-x: scroll;
+    margin-right: 0.25rem;
+    padding: 0 0.5rem;
+
+    .v-nav-router-button {
+      @extend .flex-horizontal;
+
+      padding: 0.25rem;
+      align-items: center;
+      justify-content: space-around;
+      font-weight: bold;
+      border-radius: 0.25rem;
+      gap: 0.5rem;
+      color: var(--v-title-secondary);
+    
+      &:hover {
+        background-color: var(--v-hover);
+        cursor: pointer;
+      }
+    
+      &:active {
+        background-color: var(--v-active);
+      }
+    }
 
     .v-nav-router-link {
       @extend .flex-horizontal;
