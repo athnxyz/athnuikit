@@ -8,12 +8,13 @@ const tagDetailListItems = ref([
   { key: 'bgColor: string', content: 'the background color for the tag' },
 ]);
 
-const implementation = `
+const implementation = ref(`
 <v-tag 
   :content="{ text: 'test' }"
   color="var(--v-text-primary)"
   bgColor="var(--v-soft-green)">
-</v-tag>`;
+</v-tag>
+`);
 </script>
 
 <template>

@@ -7,7 +7,7 @@ const titleDetailListItems = ref([
   { key: 'subTitle?: string', content: 'optional sub title text' },
 ]);
 
-const implementation = `<v-title title="this is a title" subTitle="this is a sub title"></v-title>`;
+const implementation = ref(`<v-title title="this is a title" subTitle="this is a sub title"></v-title>`);
 </script>
 
 <template>

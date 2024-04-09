@@ -9,13 +9,14 @@ const contaienrDetailListItems = ref([
   { key: 'style?: { [style: string]: string }', content: 'override container style' }
 ]);
 
-const implementation = `
+const implementation = ref(`
 <v-container 
   orientation="vertical" 
   overflow="auto"
   border>
   <slot></slot>
-</v-container>`;
+</v-container>
+`);
 </script>
 
 <template>

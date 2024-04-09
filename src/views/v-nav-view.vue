@@ -8,7 +8,7 @@ const navDetailsList = ref([
   { key: 'style?: { [style: string]: string }', content: 'overrride nav style' }
 ]);
 
-const navImplementation = `
+const navImplementation = ref(`
 <v-nav
   :title="{ title: 'title', subTitle: 'subTitle' }"
   :routerLinks="routerLinks">
@@ -16,7 +16,8 @@ const navImplementation = `
     <!--your additional nav actions-->
     <!--dark mode is already included and will stack first in actions-->
   </template>
-</v-nav>`;
+</v-nav>`
+);
 </script>
 
 <template>

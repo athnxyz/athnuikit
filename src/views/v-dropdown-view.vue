@@ -14,11 +14,12 @@ const options = ref([
   { label: 'option2', action: () => selected.value = 'option2' }
 ]);
 
-const implementation = `
+const implementation = ref(`
 <v-dropdown 
   :button="{ message: 'open dropdown' }"
   :options="options">
-</v-dropdown>`;
+</v-dropdown>
+`);
 </script>
 
 <template>

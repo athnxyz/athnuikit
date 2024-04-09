@@ -7,7 +7,7 @@ const useDebounceDetailsList = ref([
   { key: 'delay: number', content: 'the debounce period in ms' }
 ]);
 
-const useDebounceImpl = `
+const useDebounceImpl = ref(`
 import { useDebounce } from '@uikit/composables/useDebounce';
 
 // debounce is the debounce wrapper function for the operation
@@ -15,14 +15,14 @@ const { debounce } = useDebounce<(arg: T) => void>(); // arg is T for demo purpo
 
 const action = (arg: T) => { /* the operation to perform */ };
 const debounceAction = debounce(action, 200); // delay of 200ms
-`;
+`);
 
 const useExpBackoffDetailsList = ref([
   { key: 'fn: T extends (...args: any[]) => any', content: 'the operation to retry on failures' },
   { key: 'retries: number', content: 'the number of retries to attempt' }
 ]);
 
-const useExpBackoffImpl = `
+const useExpBackoffImpl = ref(`
 import { useExponentialBackoff } from '@uikit/composables/useExponentialBackoff';
 
 /*
@@ -33,7 +33,7 @@ const { backoff, backoffErr } = useExponentialBackoff<(arg: T) => Promise<void>>
 
 const action = async (arg: T) => { /* the operation to perform */ };
 const backoffAction = backoff(action, 5); // 5 total retries
-`;
+`);
 
 const useLocalStorageDetailsList = ref([
   { key: 'prefix: PRF extends string', content: 'the prefix for the key' },
@@ -41,7 +41,7 @@ const useLocalStorageDetailsList = ref([
   { key: 'value: string', content: 'the stringified value for a given key' }
 ]);
 
-const useLocalStorageImpl = `
+const useLocalStorageImpl = ref(`
 import { useLocalStorage } from '@uikit/composables/useLocalStorage';
 
 /*
@@ -53,7 +53,7 @@ import { useLocalStorage } from '@uikit/composables/useLocalStorage';
   clear() is a wrapper function to clear localstorage
 */
 const { localStorageRef, updateValueForKeyMap, setItem, getItem, deleteItem, clear } = useLocalStorage<T, V>();
-`;
+`);
 
 const usePathDataLoaderDetailsList = ref([
   { key: 'rootData: T', content: 'the root data of the path' },
@@ -63,7 +63,7 @@ const usePathDataLoaderDetailsList = ref([
   { key: 'selectDataFn: (id: string) => Promise<T>', content: 'function to asynchronously load data for next node in path' },
 ]);
 
-const usePathDataLoaderImpl = `
+const usePathDataLoaderImpl = ref(`
 import { usePathDataLoader} from '@uikit/composables/usePathDataLoader';
 
 const rootData = ref<T>(/* needs to be populated, make network request or other op */);
@@ -82,14 +82,14 @@ const selectDataFn = async = (id: string) => { /* fetch selected data asynchrono
 const { path, currNode, pathLoading, pathErr, selectNode } = usePathDataLoader(
   rootData, extractIdFn, extractPrevIdFn, extractLinkedNodes, selectDataFn
 );
-`;
+`);
 
 const usePeriodicDataFetchDetailsList = ref([
   { key: 'fetcher: Ref<(() => Promise<T>) | undefined>', content: 'the data fetch function' },
   { key: 'timespanInMs: number', content: 'the length of time for a period' }
 ]);
 
-const usePeriodicDataFetchImpl = `
+const usePeriodicDataFetchImpl = ref(`
 import { usePeriodicDataFetch } from '@uikit/composables/usePeriodicDataFetch';
 
 const fetcher = (): Promise<T> => { /* perform operation here */ };
@@ -99,14 +99,14 @@ const fetcher = (): Promise<T> => { /* perform operation here */ };
   periodicError exposes a ref for Error objects on data fetch failures
 */
 const { data, loading, periodicError } = usePeriodicDataFetch(fetcher, 500); // period of 500ms
-`;
+`);
 
 const useScrollLoaderDetailsList = ref([
   { key: 'loadPageFn: (page: number) => Promise<T[]>', content: 'asynchronous page load function' },
   { key: 'scrollableElementRef: Ref<HTMLElement | null>', content: 'the scrollable html element to load content in' }
 ]);
 
-const useScrollLoaderImpl = `
+const useScrollLoaderImpl = ref(`
 import { useScrollLoader } from '@uikit/composables/useScrollLoader';
 
 const scrollElRef = ref(null); // the html element, use ref binding in component
@@ -118,7 +118,7 @@ const loadDataFn = async (page: number) => { /* paginate function */ };
   scrollError exposes a ref for Error objects on data load failure
 */
 const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef);
-`;
+`);
 </script>
 
 <template>

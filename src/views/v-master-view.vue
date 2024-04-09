@@ -76,7 +76,7 @@ const loadKeysFn = async (page: number): Promise<{ id: number, content: string }
 const extractKeyFn = (key: { id: number, content: string }) => key.id.toString();
 const getDataFn = (key: string) => data.value[parseInt(key)];
 
-const implementation = `
+const implementation = ref(`
 <v-master-view
   v-model:selectedKey="selectedKey"
   :loadKeysFn="loadKeysFn"
@@ -88,7 +88,8 @@ const implementation = `
   <template #dataview="{ data }">
     <v-text>{{ data }}</v-text>
   </template>
-</v-master-view>`;
+</v-master-view>
+`);
 </script>
 
 <template>

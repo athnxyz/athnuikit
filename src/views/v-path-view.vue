@@ -33,7 +33,7 @@ const extractPrevIdFn = (data: ShowcasePathNodeDataType) => data?.refId ?? null;
 const extractLinkedNodes = (data: ShowcasePathNodeDataType) => data?.linkMap ? Object.keys(data.linkMap) : null;
 const selectDataFn = async (id: string): Promise<ShowcasePathNodeDataType | undefined> => data.value.find(el => el.id === id);
 
-const implementation = `
+const implementation = ref(`
 <v-path
   :rootData="data[0]"
   :extractIdFn="extractIdFn"
@@ -44,7 +44,7 @@ const implementation = `
     <v-text>{{ JSON.stringify(data.data) }}</v-text>
   </template>
 </v-path>
-`;
+`);
 </script>
 
 <template>

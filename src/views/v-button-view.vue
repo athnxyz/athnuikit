@@ -18,12 +18,13 @@ const messages: ('click me!' | 'clicked!')[] = [ 'click me!', 'clicked!' ]
 const message = ref(messages[0]);
 const handleClick = (option: string) => messages.filter(m => m !== option)[0];
 
-const implementation = `
+const implementation = ref(`
 <v-button 
   v-model:option="message"
   :action="handleClick"
   :message="message">
-</v-button>`;
+</v-button>
+`);
 </script>
 
 <template>

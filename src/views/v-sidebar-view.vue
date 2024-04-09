@@ -7,14 +7,15 @@ const sidebarDetailListItems = ref([
   { key: 'position: left | right', content: 'the sidebar position' },
 ]);
 
-const implementation = `
+const implementation = ref(`
 <v-sidebar 
   position="right"
   :button="{ message: 'show sidebar' }">
   <template #sidebar>
     <v-text>sidebar content!</v-text>
   </template>
-</v-sidebar>`;
+</v-sidebar>
+`);
 </script>
 
 <template>
