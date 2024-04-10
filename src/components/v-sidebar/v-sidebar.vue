@@ -42,7 +42,7 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideSi
   </div>
 
   <v-slide-horizontal type="single">
-    <div v-if="isOpen"
+    <div v-if="isOpen" v-blur="isOpen"
       ref="sidebarContainer" 
       :class="position === 'left' ? 'v-sidebar align-left' : 'v-sidebar align-right'">
       

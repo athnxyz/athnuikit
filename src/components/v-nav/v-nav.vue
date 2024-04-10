@@ -19,7 +19,7 @@ const { navigate } = useNavigateRoute();
       <v-sidebar :button="{ icon: 'fa-solid fa-list', overrideBtnClass: 'v-nav-router-button' }">
         
         <template #sidebar="{ isOpen, toggleSidebar }">
-          <v-button v-for="route in routerLinks"
+            <v-button v-for="route in routerLinks" :key="route.path"
             :option="isOpen"
             :action="navigate(route.path, toggleSidebar)"
             :route="route.path"

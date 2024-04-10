@@ -1,6 +1,9 @@
 import type { App, Component } from 'vue';
 
 import { 
+  VBlur,
+  VFocus,
+
   vbutton,
   vcontainer,
   vdarkmode,
@@ -20,6 +23,7 @@ import {
   vslidehorizontal,
   vslidevertical
 } from '@uikit/uikit';
+import type { VDirective } from './directives/directives.types';
 
 
 interface ComponentRegistry {
@@ -27,8 +31,14 @@ interface ComponentRegistry {
   component: Component;
 }
 
+
 export class UIKitLoader {
   load(app: App<Element>) {
+    const directiveRegistryList: VDirective<unknown>[] = [
+      new VBlur(),
+      new VFocus()
+    ];
+
     const componentRegitryList: ComponentRegistry[] = [
       { label: 'v-button', component: vbutton },
       { label: 'v-container', component: vcontainer },
@@ -52,6 +62,7 @@ export class UIKitLoader {
       { label: 'v-slide-vertical', component: vslidevertical }
     ];
 
+    directiveRegistryList.forEach(dr => dr.loadDirective(app));
     componentRegitryList.forEach(cr => app.component(cr.label, cr.component));
     animationRegistryList.forEach(ar => app.component(ar.label, ar.component));
   }

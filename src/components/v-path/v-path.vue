@@ -5,7 +5,7 @@ import { usePathDataLoader} from '@uikit/composables/usePathDataLoader';
 
 const props = defineProps<PathProps<T>>();
 
-const { path, currNode, pathLoading, pathErr, selectNode } = usePathDataLoader(
+const { path, currNode, selectNode } = usePathDataLoader(
   props.rootData,
   props.extractIdFn,
   props.extractPrevIdFn,
@@ -21,12 +21,16 @@ const { path, currNode, pathLoading, pathErr, selectNode } = usePathDataLoader(
     <div class="v-path-nodes">
 
       <v-fade type="group">
-        <div v-for="node in path" class="v-node">
+        <div v-for="node in path" 
+          :key="node.id"
+          v-cloak
+          class="v-node">
           
           <v-title :title="node.id"></v-title>
 
           <template v-if="node.linkedNodes">
             <v-button v-for="link in node.linkedNodes"
+              :key="link"
               :option="link"
               :message="link"
               :action="selectNode">

@@ -10,6 +10,7 @@ import router from '@uikit/router';
 import FontAwesomeIcon from '@uikit/font-awesome.loader';
 import { UIKitLoader } from '@uikit/uikit.loader';
 
+
 const app = createApp(App);
 
 app.use(createPinia());

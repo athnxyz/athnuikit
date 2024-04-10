@@ -15,7 +15,9 @@ const defaultStyle = ref({
 
 <template>
 
-  <div :class="orientation === 'vertical' ? 'v-container-vertical' : 'v-container-horizontal'"
+  <div 
+    v-cloak
+    :class="orientation === 'vertical' ? 'v-container-vertical' : 'v-container-horizontal'"
     :style="style ? { ...style, ...defaultStyle } : defaultStyle">
     <slot></slot>
   </div>

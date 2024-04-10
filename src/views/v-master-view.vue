@@ -101,7 +101,19 @@ const implementation = ref(`
 
     <v-container orientation="vertical" border>
       <v-title title="vmasterview"></v-title>
-      <v-list :items="masterViewDetailListItems"></v-list>
+      <v-list 
+        :items="masterViewDetailListItems"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+        
+      </v-list>
     </v-container>
 
     

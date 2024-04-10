@@ -7,7 +7,7 @@ defineProps<TagProps>();
 
 <template>
 
-  <div class="v-tag" 
+  <div class="v-tag" v-cloak
     :style="{ color, 'background-color': bgColor }">
     <div class="v-tag-content">{{ content.text }}</div>
   </div>

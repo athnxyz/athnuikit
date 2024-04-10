@@ -14,8 +14,8 @@ watch(valueRef, (update: string) => emit('update:value', update));
 
 <template>
 
-  <div class="v-input">
-    <textarea v-model="valueRef" disabled></textarea>
+  <div v-cloak class="v-input">
+    <textarea v-focus v-model="valueRef" disabled></textarea>
   </div>
 
 </template>

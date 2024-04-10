@@ -27,7 +27,8 @@ const debounceButtonClick = debounce(buttonClick, props.debounce);
 
 <template>
 
-  <div :class="overrideBtnClass ?? 'v-button'"
+  <div v-cloak
+    :class="overrideBtnClass ?? 'v-button'"
     :style="buttonStyle"
     @click="debounceButtonClick">
     <font-awesome-icon v-if="icon" :icon="icon"/>

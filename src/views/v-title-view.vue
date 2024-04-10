@@ -15,7 +15,19 @@ const implementation = ref(`<v-title title="this is a title" subTitle="this is a
     
     <v-container orientation="vertical" border>
       <v-title title="vtitle"></v-title>
-      <v-list :items="titleDetailListItems"></v-list>
+      <v-list 
+        :items="titleDetailListItems"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+        
+      </v-list>
     </v-container>
     
     <v-container orientation="vertical">

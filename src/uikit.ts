@@ -17,8 +17,10 @@ import vfade from '@uikit/animations/v-fade.vue';
 import vslidehorizontal from '@uikit/animations/v-slide-horizontal.vue';
 import vslidevertical from '@uikit/animations/v-slide-vertical.vue';
 
+import { VBlur } from '@uikit/directives/v-blur';
+import { VFocus } from '@uikit/directives/v-focus';
 
-export { 
+export {
   vbutton,
   vcontainer,
   vdarkmode,
@@ -36,5 +38,8 @@ export {
 
   vfade,
   vslidehorizontal,
-  vslidevertical
+  vslidevertical,
+
+  VBlur,
+  VFocus
 };

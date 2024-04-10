@@ -1,4 +1,5 @@
-export interface ListProps {
-  items: { key: string, content: string }[];
-  icon?: string
+export interface ListProps<T, V> {
+  items: { key: T, content: V }[];
+  extractKeyFn: (key: T) => string;
+  icon?: string;
 }

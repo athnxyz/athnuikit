@@ -7,7 +7,7 @@ defineProps<TextProps>();
 
 <template>
 
-  <div class="v-text-container">
+  <div class="v-text-container" v-cloak>
     <slot></slot>
   </div>
   

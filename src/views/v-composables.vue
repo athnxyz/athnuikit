@@ -127,37 +127,109 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
 
     <v-container orientation="vertical" border>
       <v-title title="useDebounce"></v-title>
-      <v-list :items="useDebounceDetailsList"></v-list>
+      <v-list 
+        :items="useDebounceDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+
+      </v-list>
       <v-input v-model:value="useDebounceImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>
       <v-title title="useExponentialBackoff"></v-title>
-      <v-list :items="useExpBackoffDetailsList"></v-list>
+      <v-list 
+        :items="useExpBackoffDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+
+      </v-list>
       <v-input v-model:value="useExpBackoffImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>
       <v-title title="useLocalStorage"></v-title>
-      <v-list :items="useLocalStorageDetailsList"></v-list>
+      <v-list 
+        :items="useLocalStorageDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+
+      </v-list>
       <v-input v-model:value="useLocalStorageImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>
       <v-title title="usePathDataLoader"></v-title>
-      <v-list :items="usePathDataLoaderDetailsList"></v-list>
+      <v-list 
+        :items="usePathDataLoaderDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+
+      </v-list>
       <v-input v-model:value="usePathDataLoaderImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>
       <v-title title="usePeriodicDataFetcher"></v-title>
-      <v-list :items="usePeriodicDataFetchDetailsList"></v-list>
+      <v-list 
+        :items="usePeriodicDataFetchDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+
+      </v-list>
       <v-input v-model:value="usePeriodicDataFetchImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>
       <v-title title="useScrollLoader"></v-title>
-      <v-list :items="useScrollLoaderDetailsList"></v-list>
+      <v-list 
+        :items="useScrollLoaderDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+        
+      </v-list>
       <v-input v-model:value="useScrollLoaderImpl" disabled></v-input>
     </v-container>
   

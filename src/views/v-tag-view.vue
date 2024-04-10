@@ -22,7 +22,19 @@ const implementation = ref(`
     
     <v-container orientation="vertical" border>
       <v-title title="vtag"></v-title>
-      <v-list :items="tagDetailListItems"></v-list>
+      <v-list 
+        :items="tagDetailListItems"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+        
+      </v-list>
     </v-container>
     
     <v-container orientation="vertical">

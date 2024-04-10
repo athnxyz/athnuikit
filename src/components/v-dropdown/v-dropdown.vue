@@ -53,8 +53,11 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
     </div>
    
     <v-slide-vertical type="single">
-      <div v-if="isOpen" ref="dropdownContainer" class="v-dropdown-elements">
-        <v-button v-for="o in options"
+      <div v-if="isOpen" 
+        v-cloak
+        ref="dropdownContainer" 
+        class="v-dropdown-elements">
+        <v-button v-for="o in options" :key="o.label"
           :option="o"
           :action="o.route ? navigate(o.route, handleSelection) : handleSelection"
           :message="o.label"

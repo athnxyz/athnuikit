@@ -32,7 +32,7 @@ onMounted(() => {
 
 <template>
 
-  <Toast position="bottom-left" class="v-notification" />
+  <Toast v-cloak position="bottom-left" class="v-notification" />
 
 </template>
 

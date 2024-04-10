@@ -68,10 +68,10 @@ onUnmounted(() => {
       class="v-master-view-keys" 
       :style="keyViewStyle">
 
-      <div v-for="key of items" 
+      <div v-for="key of items" :key="extractKeyFn(key)"
         :class="selectedKey === key ? 'v-master-view-key v-master-view-selection' : 'v-master-view-key'"
         @click="debounceOnSelect(key)">
-        <div class="v-master-view-key-slot">
+        <div v-cloak class="v-master-view-key-slot">
           <slot name="keyview" :key="key"></slot>
         </div>
       </div>
@@ -83,7 +83,8 @@ onUnmounted(() => {
 
     </div>
 
-    <div class="v-master-view-data" 
+    <div v-cloak
+      class="v-master-view-data" 
       :style="{ width: viewWidths?.dataView ?? defaultViewWidths.dataView }">
 
       <slot v-if="dataRef" name="dataview" :data="dataRef"></slot>
