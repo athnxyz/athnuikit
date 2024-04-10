@@ -16,7 +16,7 @@ const buttonDetailListItems = ref([
 
 const messages: ('click me!' | 'clicked!')[] = [ 'click me!', 'clicked!' ]
 const message = ref(messages[0]);
-const handleClick = (opts: { option: string }) => messages.filter(m => m !== opts.option)[0];
+const handleClick = (option: string) => messages.filter(m => m !== option)[0];
 
 const implementation = ref(`
 <v-button 
