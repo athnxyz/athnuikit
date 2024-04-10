@@ -5,12 +5,6 @@ import { useNavigateRoute } from '@uikit/composables/useNagivateRoute';
 defineProps<NavProps>();
 
 const { navigate } = useNavigateRoute();
-const handleRouteClick = (route: `/${string}`, fn2: (option: boolean) => void) => {
-  return (option: boolean) => {
-    navigate(route);
-    return fn2(option);
-  }
-};
 </script>
 
 <template>
@@ -27,7 +21,7 @@ const handleRouteClick = (route: `/${string}`, fn2: (option: boolean) => void) =
         <template #sidebar="{ isOpen, toggleSidebar }">
           <v-button v-for="route in routerLinks"
             :option="isOpen"
-            :action="handleRouteClick(route.path, toggleSidebar)"
+            :action="navigate(route.path, toggleSidebar)"
             :route="route.path"
             :message="route.label"
             overrideBtnClass="v-nav-router-link">

@@ -21,7 +21,6 @@ const { navigate } = useNavigateRoute();
 const handleSelection = (option: DropdownOption) => {
   isOpen.value = toggleDropdown(isOpen.value);
   emit('update:selection', option.label);
-  if (option.route) navigate(option.route);
 };
 
 const handleClickOutsideDropdown = (event: MouseEvent) => {
@@ -57,7 +56,7 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
       <div v-if="isOpen" ref="dropdownContainer" class="v-dropdown-elements">
         <v-button v-for="o in options"
           :option="o"
-          :action="handleSelection"
+          :action="o.route ? navigate(o.route, handleSelection) : handleSelection"
           :message="o.label"
           :icon="o.icon"
           overrideBtnClass="v-dropdown-element">
