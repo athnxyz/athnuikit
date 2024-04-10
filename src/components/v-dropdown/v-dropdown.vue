@@ -1,24 +1,27 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import type { Ref } from 'vue';
 import { ref, onBeforeUnmount, onMounted } from 'vue';
 import { every } from 'lodash';
 
 import type { DropdownEmits, DropdownProps, DropdownOption } from '@uikit/components/v-dropdown/v-dropdown.types';
+import { useNavigateRoute } from '@uikit/composables/useNagivateRoute';
 
 
 defineProps<DropdownProps>();
-const emit = defineEmits<DropdownEmits<T>>();
+const emit = defineEmits<DropdownEmits>();
 
 const dropdownButton = ref<HTMLElement | undefined>();
 const dropdownContainer = ref<HTMLElement | undefined>();
 const isOpen: Ref<boolean> = ref(false);
 
-const toggleDropdown = (isOpen: boolean) => ! isOpen;
-const handleSelection = async (selection: DropdownOption) => { 
-  await selection.action();
+const toggleDropdown = (option: boolean): boolean => ! option;
 
-  emit('update:options', selection);
+
+const { navigate } = useNavigateRoute();
+const handleSelection = (option: DropdownOption) => {
   isOpen.value = toggleDropdown(isOpen.value);
+  emit('update:selection', option.label);
+  if (option.route) navigate(option.route);
 };
 
 const handleClickOutsideDropdown = (event: MouseEvent) => {

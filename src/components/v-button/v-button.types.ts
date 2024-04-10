@@ -19,4 +19,4 @@ export const defaultButtonProps: Pick<ButtonProps<any>, 'debounce' | 'color' | '
   debounce: 200,
   color: 'var(--v-text-primary-invert)',
   bgColor: 'var(--v-button)'
-}
+};

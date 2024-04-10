@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Ref } from 'vue';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { every } from 'lodash';
 
@@ -9,18 +8,19 @@ import { defaultSidebarProps } from '@uikit/components/v-sidebar/v-sidebar.types
 
 withDefaults(defineProps<SidebarProps>(), defaultSidebarProps);
 
+const isOpen = ref<boolean>(false);
 const sidebarButton = ref<HTMLElement | undefined>();
 const sidebarContainer = ref<HTMLElement | undefined>();
-const isOpen: Ref<boolean> = ref(false);
 
-const toggleSidebar = (isOpen: boolean) => ! isOpen;
+const toggleSidebar = (current: boolean) => isOpen.value = ! current;
+
 const handleClickOutsideSidebar = (event: MouseEvent) => {
   const condition = every([
     sidebarButton.value && ! sidebarButton.value.contains(event.target as Node),
     sidebarContainer.value && ! sidebarContainer.value.contains(event.target as Node)
   ]);
 
-  if (condition) isOpen.value = toggleSidebar(isOpen.value); 
+  if (condition) toggleSidebar(isOpen.value);
 };
 
 onMounted(() => document.addEventListener('click', handleClickOutsideSidebar, true));
@@ -55,7 +55,10 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideSi
 
       <div class="v-sidebar-divider"></div>
       
-      <slot name="sidebar"></slot>
+      <slot name="sidebar" 
+        :isOpen="isOpen" 
+        :toggleSidebar="toggleSidebar">
+      </slot>
 
     </div>
   </v-slide-horizontal>

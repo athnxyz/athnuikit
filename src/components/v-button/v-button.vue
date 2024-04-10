@@ -9,7 +9,7 @@ import { useDebounce } from '@uikit/composables/useDebounce';
 const props = withDefaults(defineProps<ButtonProps<T>>(), defaultButtonProps);
 const emit = defineEmits<ButtonEmits<T>>();
 
-const { debounce } = useDebounce<(option: T) => void>();
+const { debounce } = useDebounce<() => any>();
 
 const buttonStyle = ref({ 
   color: ! props?.overrideBtnClass ? props.color : undefined, 
@@ -18,15 +18,18 @@ const buttonStyle = ref({
   'box-shadow': props?.boxShadow 
 });
 
-const buttonClick = (option: T) => emit('update:option', props.action(option));
+const buttonClick = () =>  {
+  emit('update:option', props.action(props.option));
+};
+
 const debounceButtonClick = debounce(buttonClick, props.debounce);
 </script> 
 
 <template>
 
-  <div :class="overrideBtnClass ? overrideBtnClass : 'v-button'"
+  <div :class="overrideBtnClass ?? 'v-button'"
     :style="buttonStyle"
-    @click="debounceButtonClick(props.option)">
+    @click="debounceButtonClick">
     <font-awesome-icon v-if="icon" :icon="icon"/>
     {{ message }}
   </div>

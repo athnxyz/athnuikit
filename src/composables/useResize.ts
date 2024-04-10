@@ -11,4 +11,4 @@ export const useResize = (elemRef: Ref<HTMLElement | undefined>) => {
   };
 
   return { updateHeight, updateWidth };
-}
+};

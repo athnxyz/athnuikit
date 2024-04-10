@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import type { NavProps } from '@uikit/components/v-nav/v-nav.types';
-
+import { useNavigateRoute } from '@uikit/composables/useNagivateRoute';
 
 defineProps<NavProps>();
+
+const { navigate } = useNavigateRoute();
+const handleRouteClick = (route: `/${string}`, fn2: (option: boolean) => void) => {
+  return (option: boolean) => {
+    navigate(route);
+    return fn2(option);
+  }
+};
 </script>
 
 <template>
-
   <div class="v-nav-container">
     <div class="v-nav-title">
       <v-title :title="title.title" :subTitle="title.subTitle"></v-title>
@@ -14,14 +21,21 @@ defineProps<NavProps>();
     </div>
 
     <div class="v-nav-router">
+
       <v-sidebar :button="{ icon: 'fa-solid fa-list', overrideBtnClass: 'v-nav-router-button' }">
-        <template #sidebar>
-          <RouterLink v-for="route in routerLinks" class="v-nav-router-link" 
-            :to="route.path">
-            {{ route.label }}
-          </RouterLink>
+        
+        <template #sidebar="{ isOpen, toggleSidebar }">
+          <v-button v-for="route in routerLinks"
+            :option="isOpen"
+            :action="handleRouteClick(route.path, toggleSidebar)"
+            :route="route.path"
+            :message="route.label"
+            overrideBtnClass="v-nav-router-link">
+          </v-button>
         </template>
+
       </v-sidebar>
+
     </div>
 
     <div class="v-nav-actions">

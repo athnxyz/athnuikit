@@ -6,17 +6,19 @@ type DropdownButtonProps = Omit<ButtonProps<boolean>, 'option' | 'action'>;
 
 export interface DropdownOption {
   label: string;
-  action: () => Promise<void>;
+  action: () => string;
   icon?: string;
+  route?: `/${string}`;
 }
 
 export interface DropdownProps {
+  selection?: string;
   button: DropdownButtonProps;
   options: DropdownOption[];
 }
 
-export interface DropdownEmits<T> {
-  (e: 'update:options', selected: DropdownOption): void;
+export interface DropdownEmits {
+  (e: 'update:selection', selection: string): void;
 }
 
 export const defaultDropdownProps: { button: DropdownButtonProps } = {

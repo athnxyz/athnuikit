@@ -10,8 +10,8 @@ const dropdownDetailListItems = ref([
 
 const selected: Ref<string | null> = ref(null);
 const options = ref([
-  { label: 'option1', action: () => selected.value = 'option1' },
-  { label: 'option2', action: () => selected.value = 'option2' }
+  { label: 'option1', action: () => 'option1' },
+  { label: 'option2', action: () => 'option2' }
 ]);
 
 const implementation = ref(`
@@ -33,7 +33,8 @@ const implementation = ref(`
     
     <v-container orientation="vertical">
 
-      <v-dropdown 
+      <v-dropdown
+        v-model:selection="selected"
         :button="{ message: 'open dropdown' }"
         :options="options">
       </v-dropdown>
