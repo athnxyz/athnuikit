@@ -1,3 +1,6 @@
+import { VBlur } from '@uikit/directives/v-blur';
+import { VFocus } from '@uikit/directives/v-focus';
+
 import vbutton from '@uikit/components/v-button/v-button.vue';
 import vcontainer from '@uikit/components/v-container/v-container.vue';
 import vdarkmode from '@uikit/components/v-darkmode/v-darkmode.vue';
@@ -17,10 +20,11 @@ import vfade from '@uikit/animations/v-fade.vue';
 import vslidehorizontal from '@uikit/animations/v-slide-horizontal.vue';
 import vslidevertical from '@uikit/animations/v-slide-vertical.vue';
 
-import { VBlur } from '@uikit/directives/v-blur';
-import { VFocus } from '@uikit/directives/v-focus';
 
 export {
+  VBlur,
+  VFocus,
+
   vbutton,
   vcontainer,
   vdarkmode,
@@ -38,8 +42,5 @@ export {
 
   vfade,
   vslidehorizontal,
-  vslidevertical,
-
-  VBlur,
-  VFocus
+  vslidevertical
 };
