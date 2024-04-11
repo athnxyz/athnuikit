@@ -7,6 +7,6 @@ export const flow = <T extends FlowFn<any, any>[]>(...fns: T) => {
     return fns.reduce((acc, fn) => {
       const args = Array.isArray(acc) ? acc : [ acc ];
       return fn(...args);
-    }, args)[0]
+    }, args)[0];
   }
 };
