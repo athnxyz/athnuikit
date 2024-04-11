@@ -5,7 +5,7 @@ import { every } from 'lodash';
 
 import type { DropdownEmits, DropdownProps, DropdownOption } from '@uikit/components/v-dropdown/v-dropdown.types';
 import { useNavigateRoute } from '@uikit/composables/useNagivateRoute';
-
+import { flow } from '@uikit/utils/flow';
 
 defineProps<DropdownProps>();
 const emit = defineEmits<DropdownEmits>();
@@ -18,9 +18,11 @@ const toggleDropdown = (option: boolean): boolean => ! option;
 
 
 const { navigate } = useNavigateRoute();
-const handleSelection = (option: DropdownOption) => {
+const handleSelection = (option: DropdownOption): `/${string}`| undefined => {
   isOpen.value = toggleDropdown(isOpen.value);
   emit('update:selection', option.label);
+  
+  return option.route;
 };
 
 const handleClickOutsideDropdown = (event: MouseEvent) => {
@@ -59,7 +61,16 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
         class="v-dropdown-elements">
         <v-button v-for="o in options" :key="o.label"
           :option="o"
-          :action="o.route ? navigate(o.route, handleSelection) : handleSelection"
+          :action="flow(
+            () => { 
+              handleSelection(o);
+              return true;
+            },
+            () => {
+              if (o.route) navigate(o.route);
+              return true;
+            }
+          )"
           :message="o.label"
           :icon="o.icon"
           overrideBtnClass="v-dropdown-element">

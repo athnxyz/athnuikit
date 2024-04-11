@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { NavProps } from '@uikit/components/v-nav/v-nav.types';
 import { useNavigateRoute } from '@uikit/composables/useNagivateRoute';
+import { flow } from '@uikit/utils/flow';
+
 
 defineProps<NavProps>();
 
@@ -21,7 +23,14 @@ const { navigate } = useNavigateRoute();
         <template #sidebar="{ isOpen, toggleSidebar }">
             <v-button v-for="route in routerLinks" :key="route.path"
             :option="isOpen"
-            :action="navigate(route.path, toggleSidebar)"
+            :action="
+              flow(
+                (isOpen: boolean) => {
+                  toggleSidebar(isOpen);
+                  return true;
+                },
+                () => navigate(route.path)
+              )"
             :route="route.path"
             :message="route.label"
             overrideBtnClass="v-nav-router-link">
