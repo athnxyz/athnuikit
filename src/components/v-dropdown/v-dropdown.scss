@@ -16,7 +16,7 @@
     @extend .flex-vertical;
 
     flex-grow: 1;
-    position: fixed;
+    position: absolute;
     min-width: 150px;
     align-items: center;
     z-index: 1001;

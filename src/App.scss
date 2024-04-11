@@ -16,6 +16,7 @@
   .app-container {
     @extend .flex-vertical;
     height: 100%;
+    overflow-y: hidden;
 
     .app-content {
       @extend .flex-vertical;
