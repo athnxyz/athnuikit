@@ -55,6 +55,19 @@ import { useLocalStorage } from '@uikit/composables/useLocalStorage';
 const { localStorageRef, updateValueForKeyMap, setItem, getItem, deleteItem, clear } = useLocalStorage<T, V>();
 `);
 
+const useNavigateRouteDetailsList = ref([
+  { key: 'route: `/${string}`', content: 'the route path to navigate to' }
+])
+
+const useNavigateRouteImpl = ref(`
+import { useNavigateRoute } from '@uikit/composables/useNavigateRoute';
+
+/*
+  navigate is the backoff wrapper function for updating router state
+  navErr exposes a ref for Error objects on reroute errors
+*/
+const { navigate, navErr } = useNavigateRoute();
+`);
 const usePathDataLoaderDetailsList = ref([
   { key: 'rootData: T', content: 'the root data of the path' },
   { key: 'extractIdFn: (data: T) => string', content: 'function to extract key from data' },
@@ -177,6 +190,24 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
 
       </v-list>
       <v-input v-model:value="useLocalStorageImpl" disabled></v-input>
+    </v-container>
+
+    <v-container orientation="vertical" border>
+      <v-title title="useNavigateRoute"></v-title>
+      <v-list 
+        :items="useNavigateRouteDetailsList"
+        :extractKeyFn="(key: string) => key">
+
+        <template #key="{ key }">
+          {{ key }}
+        </template>
+
+        <template #content="{ content }">
+          {{  content  }}
+        </template>
+
+      </v-list>
+      <v-input v-model:value="useNavigateRouteImpl" disabled></v-input>
     </v-container>
 
     <v-container orientation="vertical" border>
