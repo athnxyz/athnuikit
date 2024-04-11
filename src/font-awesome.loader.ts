@@ -1,8 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { 
+import {
   faChartBar,
   faCheckCircle,
+  faChevronDown,
   faCircle,
   faClose,
   faList,
@@ -18,6 +19,7 @@ class FontAwesomeLoader {
     const iconList = [
       faChartBar,
       faCheckCircle,
+      faChevronDown,
       faCircle,
       faClose,
       faList,

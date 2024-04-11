@@ -5,6 +5,7 @@ import { ref } from 'vue';
 const titleDetailListItems = ref([
   { key: 'title: string', content: 'the title text' },
   { key: 'subTitle?: string', content: 'optional sub title text' },
+  { key: 'border?: boolean', content: 'an optional border for the title' },
 ]);
 
 const implementation = ref(`<v-title title="this is a title" subTitle="this is a sub title"></v-title>`);
@@ -34,6 +35,12 @@ const implementation = ref(`<v-title title="this is a title" subTitle="this is a
 
       <v-title title="this is a title" subTitle="this is a sub title"></v-title>
 
+      <v-title 
+        title="this title has a border" 
+        subTitle="this sub title has a border" 
+        border>
+      </v-title>
+      
     </v-container>
 
     <v-container orientation="vertical" border>

@@ -1,7 +1,7 @@
 import type { Ref } from 'vue';
 import { ref } from 'vue';
 
-import { sleep } from '@uikit/utils/Utils';
+import { sleep } from '@uikit/utils/utils';
 
 
 const DEFAULT_DEPTH = 1;

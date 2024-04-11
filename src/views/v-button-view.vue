@@ -5,6 +5,7 @@ import { ref } from 'vue';
 const buttonDetailListItems = ref([
   { key: 'v-model:option: T', content: 'the selectable action on the button' },
   { key: 'action: (option: T) => T', content: 'the update function on button click' },
+  { key: 'debounce?: number', content: 'a debounce period for the button click' },
   { key: 'icon?: string', content: 'button icon' },
   { key: 'message?: string', content: 'button message' },
   { key: 'color?: string', content: 'button text color' },

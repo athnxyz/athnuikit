@@ -10,6 +10,7 @@ const routerLinks = ref([
   { path: '/vcontainer', label: 'vcontainer' },
   { path: '/vdropdown', label: 'vdropdown' },
   { path: '/vmasterview', label: 'vmasterview' },
+  { path: '/vlist', label: 'vlist' },
   { path: '/vnav', label: 'vnav' },
   { path: '/vpath', label: 'vpath' },
   { path: '/vsidebar', label: 'vsidebar' },

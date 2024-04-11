@@ -2,24 +2,48 @@
 
 
 .v-path {
-  @extend .flex-horizontal;
+  @extend .flex-vertical;
+  flex-grow: 1;
 
   .v-path-nodes {
-    @extend .flex-horizontal;
+    @extend .flex-vertical;
     overflow-x: auto;
+    border-top: 2px solid var(--v-border);
+    border-radius: 0.25rem 0.25rem 0 0;
 
     .v-node {
-      @extend .flex-vertical;
+      @extend .flex-horizontal;
 
-      width: max-content;
       justify-content: flex-start;
-      border-left: 2px solid (--v-border);
       overflow-y: auto;
+      border-bottom: 2px solid var(--v-border);
+      border-right: 2px solid var(--v-border);
+
+      .v-node-button {
+        @extend .flex-horizontal;
+        position: relative;
+
+        justify-content: flex-start;
+        align-items: center;
+        border-left: 2px solid var(--v-border);
+        background-color: inherit;
+        flex-grow: 1;
+        padding: 0.25rem 1rem;
+
+        &:hover {
+          background-color: var(--v-hover);
+          cursor: pointer;
+        }
+      
+        &:active {
+          background-color: var(--v-active);
+        }
+      }
     }
   }
 
   .v-path-node-data {
-    @extend .flex-vertical;
+    @extend .flex-horizontal;
 
     justify-content: center;
     align-items: flex-start;

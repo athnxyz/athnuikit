@@ -4,6 +4,7 @@ import about from '@uikit/views/about.vue';
 import vbuttonview from '@uikit/views/v-button-view.vue';
 import vcomposables from '@uikit/views/v-composables.vue';
 import vcontainerview from '@uikit/views/v-container-view.vue';
+import vlistview from '@uikit/views/v-list-view.vue'
 import vmasterviewv from '@uikit/views/v-master-view.vue'
 import vdropdownview from '@uikit/views/v-dropdown-view.vue';
 import vnavview from '@uikit/views/v-nav-view.vue';
@@ -40,6 +41,11 @@ const router = createRouter({
       path: '/vdropdown',
       name: 'vdropdown',
       component: vdropdownview
+    },
+    {
+      path: '/vlist',
+      name: 'vlist',
+      component: vlistview
     },
     {
       path: '/vmasterview',

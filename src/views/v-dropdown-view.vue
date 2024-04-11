@@ -4,6 +4,7 @@ import { ref } from 'vue';
 
 
 const dropdownDetailListItems = ref([
+  { key: 'v-model:selection: string', content: 'the current selection on the dropddown' },
   { key: 'button: DropdownButtonProps', content: 'styling and content for the dropdown toggle' },
   { key: 'options: DropdownOption[]', content: 'a list of label, action, and icon for each selectable element' }
 ]);
@@ -15,7 +16,8 @@ const options = ref([
 ]);
 
 const implementation = ref(`
-<v-dropdown 
+<v-dropdown
+  v-model:selection="selected"
   :button="{ message: 'open dropdown' }"
   :options="options">
 </v-dropdown>

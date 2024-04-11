@@ -21,28 +21,26 @@ const navImplementation = ref(`
 </script>
 
 <template>
-  <v-container orientation="vertical">
     
-    <v-container orientation="vertical" border>
+  <v-container orientation="vertical" border>
 
-      <v-title title="vnav"></v-title>
-      <v-list 
-        :items="navDetailsList"
-        :extractKeyFn="(key: string) => key">
+    <v-title title="vnav"></v-title>
+    <v-list 
+      :items="navDetailsList"
+      :extractKeyFn="(key: string) => key">
 
-        <template #key="{ key }">
-          {{ key }}
-        </template>
+      <template #key="{ key }">
+        {{ key }}
+      </template>
 
-        <template #content="{ content }">
-          {{  content  }}
-        </template>
-      </v-list>
-      <v-input v-model:value="navImplementation" disabled></v-input>
-      
-    </v-container>
-
+      <template #content="{ content }">
+        {{  content  }}
+      </template>
+    </v-list>
+    <v-input v-model:value="navImplementation" disabled></v-input>
+    
   </v-container>
+
 </template>
 
 <style lang="scss">

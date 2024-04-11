@@ -6,11 +6,7 @@ import { usePathDataLoader} from '@uikit/composables/usePathDataLoader';
 const props = defineProps<PathProps<T>>();
 
 const { path, currNode, selectNode } = usePathDataLoader(
-  props.rootData,
-  props.extractIdFn,
-  props.extractPrevIdFn,
-  props.extractLinkedNodes,
-  props.selectDataFn
+  props.rootData, props.extractIdFn, props.extractPrevIdFn, props.extractLinkedNodes, props.selectDataFn
 );
 </script>
 
@@ -21,20 +17,19 @@ const { path, currNode, selectNode } = usePathDataLoader(
     <div class="v-path-nodes">
 
       <v-fade type="group">
-        <div v-for="node in path" 
-          :key="node.id"
+        <div v-for="node in path" :key="node.id"
           v-cloak
           class="v-node">
-          
-          <v-title :title="node.id"></v-title>
 
-          <template v-if="node.linkedNodes">
-            <v-button v-for="link in node.linkedNodes"
-              :key="link"
+          <template v-if="node.linkedNodes && node.linkedNodes.length > 0">
+
+            <v-button v-for="link in node.linkedNodes" :key="link"
               :option="link"
-              :message="link"
-              :action="selectNode">
+              icon="fa-solid fa-chevron-down"
+              :action="selectNode"
+              overrideBtnClass="v-node-button">
             </v-button>
+
           </template>
 
         </div>
@@ -42,8 +37,8 @@ const { path, currNode, selectNode } = usePathDataLoader(
 
     </div>
 
-    <div class="v-path-node-data">
-      <slot v-if="currNode" name="nodeDataView" :data="currNode.data"></slot>
+    <div v-if="currNode" class="v-path-node-data">
+      <slot name="nodeDataView" :data="currNode.data"></slot>
     </div>
 
   </div>
