@@ -127,7 +127,7 @@ const result = flowFn(1, 2); // expects args for first function, the rest of fun
 console.log(result); // result will be true
 `),o=X(`
 type FlowFn<T, U> = (...args: T extends any ? any : never) => U;
-type InferLast<T extends any[]> = T extends [...infer _, infer Last] ? Last : never;
+type InferLast<T extends any[]> = T extends [ ...infer _, infer Last ] ? Last : never;
 
 
 export const flow = <T extends FlowFn<any, any>[]>(...fns: T) => {
@@ -136,7 +136,7 @@ export const flow = <T extends FlowFn<any, any>[]>(...fns: T) => {
       const args = Array.isArray(acc) ? acc : [ acc ];
       return fn(...args);
     }, args)[0];
-  }
+  };
 };
 `);return(a,l)=>{const u=J("v-title"),f=J("v-list"),d=J("v-input"),v=J("v-container");return pe(),Ge(v,{orientation:"vertical",overflow:"auto"},{default:K(()=>[I(v,{orientation:"vertical",border:""},{default:K(()=>[I(u,{title:"vflow"}),I(f,{items:n.value,extractKeyFn:p=>p},{key:K(({key:p})=>[Se(Ae(p),1)]),content:K(({content:p})=>[Se(Ae(p),1)]),_:1},8,["items","extractKeyFn"]),I(d,{value:r.value,"onUpdate:value":l[0]||(l[0]=p=>r.value=p),disabled:""},null,8,["value"]),I(d,{value:o.value,"onUpdate:value":l[1]||(l[1]=p=>o.value=p),disabled:""},null,8,["value"])]),_:1})]),_:1})}}}),PE=He({__name:"v-list-view",setup(e){const n=X([{key:"items: { key: T, content: V }[]",content:"a list of the key and associated content for the key"},{key:"extractKeyFn: (key: T) => string",content:"get a unique identifier from the key"},{key:"icon?: string",content:"list item icon"}]),r=X(`
 <v-list 
