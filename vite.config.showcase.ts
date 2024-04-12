@@ -19,7 +19,7 @@ export default defineConfig({
     outDir: 'showcase-dist', // Specify the output directory for the showcase build
     rollupOptions: {
       input: {
-        main: 'src/main.ts', // Adjust the path to your showcase entry point
+        main: './index.html'
       }
     }
   }
