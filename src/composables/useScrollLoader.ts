@@ -26,7 +26,7 @@ export const useScrollLoader = <T>(loadPageFn: (page: number) => Promise<T[]>, s
         }
 
         prevItems.value = nextItems;
-      } else { scrollEnd.value = true }
+      } else { scrollEnd.value = true; }
     } catch (err) { 
       scrollError.value = err as Error;
     } finally { loading.value = false; }
@@ -49,7 +49,7 @@ export const useScrollLoader = <T>(loadPageFn: (page: number) => Promise<T[]>, s
 
   onMounted(async () => { items.value = await loadPageFn(currPage.value); });
 
-  onUnmounted(() => {
+  onUnmounted(() => { 
     if (scrollableElementRef.value) scrollableElementRef.value.removeEventListener('scroll', onPaginate);
   });
 
