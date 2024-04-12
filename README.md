@@ -21,7 +21,7 @@ In your `main.ts` file, you can either import individual components/animations/c
 ```ts
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import { VUIKitLoader } from 'athnuikit/uikit.loader';
+import { VUIKitLoader } from 'athnuikit';
 
 import App from '@app/App.vue';
 import router from '@app/router';
