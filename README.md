@@ -9,4 +9,3 @@ To view component showcase, go to the [github pages athnuikit showcase](https://
 ## todo
 
 - complete testing of components
-- publish as npm package

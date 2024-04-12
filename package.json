@@ -1,8 +1,9 @@
 {
   "name": "athnuikit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "homepage": "https:/athnxyz.github.io/athnuikit",
   "scripts": {
     "dev": "vite",
@@ -53,6 +54,7 @@
     "start-server-and-test": "^2.0.3",
     "typescript": "~5.4.0",
     "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.8.1",
     "vite-plugin-vue-devtools": "^7.0.18",
     "vitest": "^1.4.0",
     "vue-tsc": "^2.0.6"
