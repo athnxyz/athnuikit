@@ -16,7 +16,7 @@ export default defineConfig({
     outDir: 'dist',
     lib: {
       entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-      // formats: ['es'],
+      formats: ['es'],
       fileName: 'index',
       name: 'athnuikit',
     },
@@ -30,8 +30,13 @@ export default defineConfig({
     }
   },
   plugins: [
-    vue(),
-    VueDevTools(),
-    dts({ rollupTypes: true })
+    dts({ 
+      copyDtsFiles: true,
+      outDir: [ 'dist' ],
+      compilerOptions: {
+        declarationMap: true
+      }
+    }),
+    vue()
   ]
 })

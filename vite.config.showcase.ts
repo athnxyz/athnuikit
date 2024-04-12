@@ -6,21 +6,21 @@ import VueDevTools from 'vite-plugin-vue-devtools';
 
 export default defineConfig({
   base: '/athnuikit',
-  plugins: [
-    vue(),
-    VueDevTools(),
-  ],
   resolve: {
     alias: {
       '@uikit': fileURLToPath(new URL('./src', import.meta.url)),
     }
   },
   build: {
-    outDir: 'showcase-dist', // Specify the output directory for the showcase build
+    outDir: 'showcase-dist',
     rollupOptions: {
       input: {
         main: './index.html'
       }
     }
-  }
+  },
+  plugins: [
+    vue(),
+    VueDevTools(),
+  ],
 })

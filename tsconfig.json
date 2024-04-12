@@ -12,21 +12,24 @@
     }
   ],
   "compilerOptions": {
-    "module": "esnext",
     "target": "esnext",
-    "useDefineForClassFields": true,
-    "isolatedModules": true,
+    "module": "esnext",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "outDir": "dist",
     "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "allowJs": true,
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "baseUrl": ".",
     "paths": {
       "@uikit/*": ["src/*"]
     },
-    "types": ["vite/client", "vue"],
+    "types": [ "node", "vite/client", "vue"],
     "lib": [
       "esnext",
       "dom",
@@ -34,7 +37,6 @@
       "scripthost"
     ],
     "skipLibCheck": true,
-    "outDir": "dist",
     "declaration": true
   }
 }
