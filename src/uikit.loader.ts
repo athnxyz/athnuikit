@@ -32,7 +32,7 @@ interface ComponentRegistry {
 }
 
 
-export class UIKitLoader {
+export class VUIKitLoader {
   load(app: App<Element>) {
     const directiveRegistryList: VDirective<unknown>[] = [
       new VBlur(),

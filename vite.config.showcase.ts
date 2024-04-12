@@ -16,19 +16,10 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist',
-    lib: {
-      entry: fileURLToPath(new URL('./src/index.ts', import.meta.url)),
-      formats: ['es'],
-      fileName: 'index',
-      name: 'vuikit',
-    },
+    outDir: 'showcase-dist', // Specify the output directory for the showcase build
     rollupOptions: {
-      external: ['vue'],
-      output: {
-        globals: {
-          vue: 'Vue',
-        }
+      input: {
+        main: 'src/main.ts', // Adjust the path to your showcase entry point
       }
     }
   }

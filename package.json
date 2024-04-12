@@ -1,12 +1,14 @@
 {
   "name": "vuikit",
   "version": "0.0.1",
-  "private": true,
   "type": "module",
+  "main": "dist/index.js",
   "homepage": "https:/athnxyz.github.io/vuikit",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "run-p type-check \"build-only {@}\"",
+    "build:showcase": "vite build --config vite.config.showcase.ts",
+    "build:vuikit": "vite build --config vite.config.ts",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
@@ -14,7 +16,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d showcase-dist",
+    "publish": "npm publish"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
