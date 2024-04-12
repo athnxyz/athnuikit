@@ -1,9 +1,9 @@
 {
-  "name": "vuikit",
+  "name": "athnuikit",
   "version": "0.0.1",
   "type": "module",
   "main": "dist/index.js",
-  "homepage": "https:/athnxyz.github.io/vuikit",
+  "homepage": "https:/athnxyz.github.io/athnuikit",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\"",

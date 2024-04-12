@@ -24,7 +24,7 @@ const routerLinks = ref([
 
   <div class="app-container">
     <v-nav
-      :title="{ title: 'vuikit', subTitle: 'a vue component collection' }"
+      :title="{ title: 'athnuikit', subTitle: 'a vue component collection' }"
       :routerLinks="routerLinks">
     </v-nav>
 
