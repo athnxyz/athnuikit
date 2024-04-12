@@ -1,4 +1,4 @@
-import type { App, Component } from 'vue';
+import type { App } from 'vue';
 
 import { 
   VBlur,
@@ -26,12 +26,6 @@ import {
 import type { VDirective } from './directives/directives.types';
 
 
-interface ComponentRegistry {
-  label: `v-${string}`;
-  component: Component;
-}
-
-
 export class VUIKitLoader {
   load(app: App<Element>) {
     const directiveRegistryList: VDirective<unknown>[] = [
@@ -39,7 +33,7 @@ export class VUIKitLoader {
       new VFocus()
     ];
 
-    const componentRegitryList: ComponentRegistry[] = [
+    const componentRegitryList = [
       { label: 'v-button', component: vbutton },
       { label: 'v-container', component: vcontainer },
       { label: 'v-darkmode', component: vdarkmode },
@@ -56,7 +50,7 @@ export class VUIKitLoader {
       { label: 'v-text', component: vtext }
     ];
 
-    const animationRegistryList: ComponentRegistry[] = [
+    const animationRegistryList = [
       { label: 'v-fade', component: vfade },
       { label: 'v-slide-horizontal', component: vslidehorizontal },
       { label: 'v-slide-vertical', component: vslidevertical }
