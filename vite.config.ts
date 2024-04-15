@@ -20,7 +20,7 @@ export default defineConfig({
       name: 'athnuikit',
     },
     rollupOptions: {
-      external: ['vue'],
+      external: [ 'lodash', 'pinia', 'primevue', 'vue', 'vue-router', '@vueuse/core' ],
       output: {
         globals: {
           vue: 'Vue',

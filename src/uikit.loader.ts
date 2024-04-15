@@ -1,5 +1,7 @@
 import type { App } from 'vue';
 
+import FontAwesomeIcon from '@uikit/font-awesome.loader';
+
 import { 
   VBlur,
   VFocus,
@@ -28,6 +30,8 @@ import type { VDirective } from './directives/directives.types';
 
 export class VUIKitLoader {
   load(app: App<Element>) {
+    app.component('font-awesome-icon', FontAwesomeIcon);
+
     const directiveRegistryList: VDirective<unknown>[] = [
       new VBlur(),
       new VFocus()

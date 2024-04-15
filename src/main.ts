@@ -7,7 +7,6 @@ import ToastService from 'primevue/toastservice';
 import App from '@uikit/App.vue';
 import router from '@uikit/router';
 
-import FontAwesomeIcon from '@uikit/font-awesome.loader';
 import { VUIKitLoader } from '@uikit/uikit.loader';
 
 
@@ -17,8 +16,6 @@ app.use(createPinia());
 app.use(router);
 app.use(PrimeVue);
 app.use(ToastService);
-
-app.component('font-awesome-icon', FontAwesomeIcon);
 
 new VUIKitLoader().load(app);
 

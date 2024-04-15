@@ -36,6 +36,6 @@ const routerLinks = ref([
 </template>
 
 <style lang="scss">
-@import '@uikit/assets/base.scss';
+@import '@uikit/v-common.scss';
 @import '@uikit/App.scss';
 </style>
