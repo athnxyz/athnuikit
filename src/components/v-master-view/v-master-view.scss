@@ -21,12 +21,12 @@
       border-radius: 0.25rem;
 
       &:hover {
-        box-shadow: 0 0 4px var(--v-boxshadow);
+        box-shadow: 0 2px 4px -4px var(--v-boxshadow);
         cursor: pointer;
       }
     
       &:active {
-        box-shadow: 0 0 8px var(--v-boxshadow);
+        box-shadow: 0 0 5px var(--v-boxshadow);
       }
 
       .v-master-view-key-slot {
