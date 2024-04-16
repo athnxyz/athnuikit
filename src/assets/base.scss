@@ -14,6 +14,8 @@
   --v-soft-grey: rgb(207, 216, 220);
   --v-soft-grey-text-primary: rgb(229, 229, 229);
   --v-soft-grey-text-seconday: rgb(189, 189, 189);
+  --v-grey-boxshadow: rgb(98, 100, 103);
+  --v-soft-grey-boxshadow: rgb(44, 45, 46);
   --v-slate-grey: rgb(75, 85, 99);
 
   --v-red: rgb(255, 143, 0);
@@ -52,6 +54,7 @@
   --v-boxshadow: var(--v-blue-highlight);
   --v-button: var(--v-grey);
   --v-container: var(--v-pale-blue);
+  --v-container-boxshadow: var(--v-grey-boxshadow);
   --v-divider: var(--v-border-light);
   --v-hover: var(--v-hover-light);
   --v-nav: var(--v-nav-blue);
@@ -74,6 +77,7 @@
   --v-boxshadow: var(--v-soft-blue-highlight);
   --v-button: var(--v-soft-grey);
   --v-container: var(--v-slate-grey);
+  --v-container-boxshadow: var(--v-soft-grey-boxshadow);
   --v-divider: var(--v-border-dark);
   --v-hover: var(--v-hover-dark);
   --v-nav: var(--v-slate-grey);

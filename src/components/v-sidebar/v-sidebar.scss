@@ -12,8 +12,10 @@
   min-width: 15vw;
   z-index: 1001;
   overflow-x: hidden;
-  background-color: var(--v-background-mute);
-  opacity: 0.8;
+  background-color: rgba(var(--v-background), 0.75);
+  backdrop-filter: blur(10px);
+  
+  -webkit-backdrop-filter: blur(10px);
 
   .v-sidebar-divider {
     @extend .flex-horizontal;
@@ -34,12 +36,12 @@
     box-shadow: 0px 6px 3px -3px var(--v-soft-green-shadow);
 
     &:hover {
-      box-shadow: 0px 0px 5px 2px var(--v-boxshadow);
+      background-color: var(--v-hover);
       cursor: pointer;
     }
   
     &:active {
-      box-shadow: 0px 0px 10px 3px var(--v-boxshadow);
+      background-color: var(--v-active);
     }
   }
 }

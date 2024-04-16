@@ -8,6 +8,7 @@ import { defaultContainerProps } from '@uikit/components/v-container/v-container
 const props = withDefaults(defineProps<ContainerProps>(), defaultContainerProps);
 const defaultStyle = ref({ 
   border: props.border ? '2px solid var(--v-border)' : 'none', 
+  'box-shadow': props.border ? '0 2px 10px -2px var(--v-container-boxshadow)' : 'none',
   'border-radius': '0.25rem',
   overflow: props.overflow
 });
