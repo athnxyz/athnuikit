@@ -6,7 +6,8 @@
 
   max-height: fit-content;
   width: 100%;
-  background-color: var(--v-container);
+  background-color: var(--v-nav);
+  box-shadow: 0 2px 20px -2px var(--v-boxshadow);
   justify-content: space-between;
   align-items: center;
   padding: 0 0.5rem;
