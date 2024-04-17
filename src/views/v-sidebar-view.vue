@@ -2,6 +2,10 @@
 import { ref } from 'vue';
 
 
+const sidebarShowcaseContainerStyle = ref({
+  'align-items': 'center'
+});
+
 const sidebarDetailListItems = ref([
   { key: 'button: SidebarButtonProps', content: 'styling and content for the dropdown toggle' },
   { key: 'position: left | right', content: 'the sidebar position' },
@@ -39,7 +43,9 @@ const implementation = ref(`
       </v-list>
     </v-container>
     
-    <v-container orientation="vertical">
+    <v-container 
+      orientation="vertical"
+      :style="sidebarShowcaseContainerStyle">
       
       <v-sidebar :button="{ message: 'show sidebar' }">
 

@@ -8,6 +8,7 @@ const props = defineProps<PathProps<T>>();
 const { path, currNode, selectNode } = usePathDataLoader(
   props.rootData, props.extractIdFn, props.extractPrevIdFn, props.extractLinkedNodes, props.selectDataFn
 );
+
 </script>
 
 <template>
@@ -17,15 +18,17 @@ const { path, currNode, selectNode } = usePathDataLoader(
     <div class="v-path-nodes">
 
       <v-fade type="group">
-        <div v-for="node in path" :key="node.id"
+        <div v-for="(node, index) in path" :key="node.id"
           v-cloak
           class="v-node">
+
+          <div v-if="index !== 0" class="v-node-connector"></div>
 
           <template v-if="node.linkedNodes && node.linkedNodes.length > 0">
 
             <v-button v-for="link in node.linkedNodes" :key="link"
               :option="link"
-              icon="fa-solid fa-chevron-down"
+              :icon="path.find(el => el.id === link) ? 'fa-solid fa-chevron-right' : 'fa-solid fa-chevron-down'"
               :action="selectNode"
               overrideBtnClass="v-node-button">
             </v-button>

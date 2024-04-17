@@ -11,9 +11,10 @@ const defaultIcon = ref('fa-solid fa-check-circle');
 <template>
 
   <div class="v-list">
-
+    
     <v-fade type="group" tag="ul">
       <li v-for="item of items" :key="extractKeyFn(item.key)" class="v-list-item">
+        
         <font-awesome-icon :icon="icon ? icon : defaultIcon"></font-awesome-icon>
         <div v-cloak class="v-list-item-key">
           <slot name="key" :key="item.key"></slot>
@@ -21,9 +22,10 @@ const defaultIcon = ref('fa-solid fa-check-circle');
         <slot v-cloak name="content"
           :content="item.content">
         </slot>
+
       </li>
     </v-fade>
-
+  
   </div>
 
 </template>

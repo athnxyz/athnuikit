@@ -2,22 +2,19 @@
 
 
 .v-path {
-  @extend .flex-vertical;
+  @extend .flex-horizontal;
   flex-grow: 1;
 
   .v-path-nodes {
-    @extend .flex-vertical;
+    @extend .flex-horizontal;
     overflow-x: auto;
-    border-top: 2px solid var(--v-border);
     border-radius: 0.25rem 0.25rem 0 0;
 
     .v-node {
-      @extend .flex-horizontal;
+      @extend .flex-vertical;
 
       justify-content: flex-start;
       overflow-y: auto;
-      border-bottom: 2px solid var(--v-border);
-      border-right: 2px solid var(--v-border);
 
       .v-node-button {
         @extend .flex-horizontal;

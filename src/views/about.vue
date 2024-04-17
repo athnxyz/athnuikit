@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-container orientation="vertical">
+  <v-container orientation="vertical" border>
     <v-title title="about" border></v-title>
 
     <v-fade type="single">

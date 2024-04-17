@@ -4,11 +4,11 @@
 .v-list {
   @extend .flex-vertical;
 
-  justify-self: space-between;
   align-items: flex-start;
   padding: 0.25rem 0.5rem;
   margin: 0.25rem;
   overflow-y: auto;
+  padding-inline-start: 0;
 
   .v-list-item {
     @extend .flex-horizontal;

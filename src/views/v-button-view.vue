@@ -2,6 +2,14 @@
 import { ref } from 'vue';
 
 
+const buttonShowcaseContainerStyle = ref({
+  'align-items': 'center'
+});
+
+const messages: ('click me!' | 'clicked!')[] = [ 'click me!', 'clicked!' ]
+const message = ref(messages[0]);
+const handleClick = (option: string) => messages.filter(m => m !== option)[0];
+
 const buttonDetailListItems = ref([
   { key: 'v-model:option: T', content: 'the selectable action on the button' },
   { key: 'action: (option: T) => T', content: 'the update function on button click' },
@@ -14,10 +22,6 @@ const buttonDetailListItems = ref([
   { key: 'fontSize?: string', content: 'button text font size' },
   { key: 'overrideBtnClass?: string', content: 'override button style' }
 ]);
-
-const messages: ('click me!' | 'clicked!')[] = [ 'click me!', 'clicked!' ]
-const message = ref(messages[0]);
-const handleClick = (option: string) => messages.filter(m => m !== option)[0];
 
 const implementation = ref(`
 <v-button 
@@ -49,7 +53,9 @@ const implementation = ref(`
       </v-list>
     </v-container>
     
-    <v-container orientation="vertical">
+    <v-container 
+      orientation="vertical" 
+      :style="buttonShowcaseContainerStyle">
 
       <v-button 
         v-model:option="message"

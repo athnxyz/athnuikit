@@ -2,6 +2,10 @@
 import { ref } from 'vue';
 
 
+const tagShowcaseContainerStyle = ref({
+  'align-items': 'center'
+});
+
 const tagDetailListItems = ref([
   { key: 'content: { text?: string, icon?: string }', content: 'the display text and icon for the tag' },
   { key: 'color: string', content: 'the display text color for the tag' },
@@ -37,7 +41,9 @@ const implementation = ref(`
       </v-list>
     </v-container>
     
-    <v-container orientation="vertical">
+    <v-container 
+      orientation="vertical"
+      :style="tagShowcaseContainerStyle">
 
       <v-tag 
         :content="{ text: 'example' }"
