@@ -4,7 +4,7 @@
 
 <template>
   <v-container orientation="vertical">
-    <v-title title="about"></v-title>
+    <v-title title="about" border></v-title>
 
     <v-fade type="single">
       <v-text>vuikit serves as a library of reusable components for vue 3</v-text>
