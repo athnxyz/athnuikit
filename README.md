@@ -23,6 +23,8 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { VUIKitLoader } from 'athnuikit';
 
+import 'athnuikit/dist/style.css'; // import stylesheet
+
 import App from '@app/App.vue';
 import router from '@app/router';
 
