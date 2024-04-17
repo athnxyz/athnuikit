@@ -139,7 +139,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
   <v-container orientation="vertical" overflow="auto">
 
     <v-container orientation="vertical" border>
-      <v-title title="useDebounce"></v-title>
+      <v-title title="useDebounce" border></v-title>
       <v-list 
         :items="useDebounceDetailsList"
         :extractKeyFn="(key: string) => key">
@@ -157,7 +157,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="useExponentialBackoff"></v-title>
+      <v-title title="useExponentialBackoff" border></v-title>
       <v-list 
         :items="useExpBackoffDetailsList"
         :extractKeyFn="(key: string) => key">
@@ -175,7 +175,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="useLocalStorage"></v-title>
+      <v-title title="useLocalStorage" border></v-title>
       <v-list 
         :items="useLocalStorageDetailsList"
         :extractKeyFn="(key: string) => key">
@@ -193,7 +193,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="useNavigateRoute"></v-title>
+      <v-title title="useNavigateRoute" border></v-title>
       <v-list 
         :items="useNavigateRouteDetailsList"
         :extractKeyFn="(key: string) => key">
@@ -211,7 +211,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="usePathDataLoader"></v-title>
+      <v-title title="usePathDataLoader" border></v-title>
       <v-list 
         :items="usePathDataLoaderDetailsList"
         :extractKeyFn="(key: string) => key">
@@ -229,7 +229,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="usePeriodicDataFetcher"></v-title>
+      <v-title title="usePeriodicDataFetcher" border></v-title>
       <v-list 
         :items="usePeriodicDataFetchDetailsList"
         :extractKeyFn="(key: string) => key">
@@ -247,7 +247,7 @@ const { items, loading, scrollError } = useScrollLoader(loadDataFn, scrollElRef)
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="useScrollLoader"></v-title>
+      <v-title title="useScrollLoader" border></v-title>
       <v-list 
         :items="useScrollLoaderDetailsList"
         :extractKeyFn="(key: string) => key">

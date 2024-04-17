@@ -11,9 +11,8 @@
   @extend .flex-vertical;
   @extend .v-container;
 
-  width: 100%;
-  justify-content: flex-start;
-  align-items: center;
+  align-items: space-between;
+  
 }
 
 .v-container-horizontal {

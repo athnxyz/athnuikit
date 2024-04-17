@@ -24,7 +24,7 @@ const navImplementation = ref(`
     
   <v-container orientation="vertical" border>
 
-    <v-title title="vnav"></v-title>
+    <v-title title="vnav" border></v-title>
     <v-list 
       :items="navDetailsList"
       :extractKeyFn="(key: string) => key">

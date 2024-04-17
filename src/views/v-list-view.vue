@@ -30,7 +30,7 @@ const implementation = ref(`
   <v-container orientation="vertical">
 
     <v-container orientation="vertical" border>
-      <v-title title="vlist"></v-title>
+      <v-title title="vlist" border></v-title>
       <v-list 
         :items="listDetailListItems"
         :extractKeyFn="(key: string) => key">

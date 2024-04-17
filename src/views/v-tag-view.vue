@@ -21,7 +21,7 @@ const implementation = ref(`
   <v-container orientation="vertical">
     
     <v-container orientation="vertical" border>
-      <v-title title="vtag"></v-title>
+      <v-title title="vtag" border></v-title>
       <v-list 
         :items="tagDetailListItems"
         :extractKeyFn="(key: string) => key">
@@ -48,7 +48,7 @@ const implementation = ref(`
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="implementation"></v-title>
+      <v-title title="implementation" border></v-title>
       <v-input v-model:value="implementation" disabled></v-input>
     </v-container>
 

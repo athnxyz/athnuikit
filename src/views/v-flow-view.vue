@@ -39,7 +39,7 @@ export const flow = <T extends FlowFn<any, any>[]>(...fns: T) => {
   <v-container orientation="vertical" overflow="auto">
 
     <v-container orientation="vertical" border>
-      <v-title title="vflow"></v-title>
+      <v-title title="vflow" border></v-title>
       <v-list 
         :items="useFlowDetailsList"
         :extractKeyFn="(key: string) => key">

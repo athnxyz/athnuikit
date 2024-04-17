@@ -15,7 +15,7 @@ const implementation = ref(`<v-title title="this is a title" subTitle="this is a
   <v-container orientation="vertical" :border="false">
     
     <v-container orientation="vertical" border>
-      <v-title title="vtitle"></v-title>
+      <v-title title="vtitle" border></v-title>
       <v-list 
         :items="titleDetailListItems"
         :extractKeyFn="(key: string) => key">
@@ -40,11 +40,11 @@ const implementation = ref(`<v-title title="this is a title" subTitle="this is a
         subTitle="this sub title has a border" 
         border>
       </v-title>
-      
+
     </v-container>
 
     <v-container orientation="vertical" border>
-      <v-title title="implementation"></v-title>
+      <v-title title="implementation" border></v-title>
       <v-input v-model:value="implementation" disabled></v-input>
     </v-container>
 
