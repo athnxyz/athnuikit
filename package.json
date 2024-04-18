@@ -1,10 +1,10 @@
 {
   "name": "athnuikit",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "homepage": "https:/athnxyz.github.io/athnuikit",
+  "homepage": "https://athnxyz.github.io/athnuikit",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\"",
