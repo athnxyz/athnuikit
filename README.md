@@ -6,6 +6,12 @@
 To view component showcase, go to the [github pages athnuikit showcase](https://athnxyz.github.io/athnuikit/)
 
 
+**Note** 
+
+The component library is still incomplete, with additional components and better test coverage to come. These will be rolled out in later versions. Until `v1`, all versions will be considered dev and not production ready.
+
+
+
 ## installation
 
 In the root of your vue project, run:

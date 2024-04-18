@@ -3,6 +3,10 @@ import type { Ref } from 'vue';
 import { ref } from 'vue';
 
 
+const dropdownShowcaseContainerStyle = ref({
+  'align-items': 'center'
+});
+
 const dropdownDetailListItems = ref([
   { key: 'v-model:selection: string', content: 'the current selection on the dropddown' },
   { key: 'button: DropdownButtonProps', content: 'styling and content for the dropdown toggle' },
@@ -28,7 +32,8 @@ const implementation = ref(`
   
   <v-container orientation="vertical">
 
-    <v-container orientation="vertical" border>
+    <v-container 
+      orientation="vertical" border>
       <v-title title="vdropdown" border></v-title>
       <v-list 
         :items="dropdownDetailListItems"
@@ -45,7 +50,9 @@ const implementation = ref(`
       </v-list>
     </v-container>
     
-    <v-container orientation="vertical">
+    <v-container 
+      orientation="vertical"
+      :style="dropdownShowcaseContainerStyle">
 
       <v-dropdown
         v-model:selection="selected"
