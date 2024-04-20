@@ -1,16 +1,16 @@
 {
   "name": "athnuikit",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "homepage": "https://athnxyz.github.io/athnuikit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/athnuikit"
+    "url": "https://github.com/athnxyz/athnuikit"
   },
   "bugs": {
-    "url": "https://github.com/your-username/athnuikit/issues"
+    "url": "https://github.com/athnxyz/athnuikit/issues"
   },
   "scripts": {
     "dev": "vite",
