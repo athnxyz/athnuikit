@@ -7,6 +7,7 @@ import type { DropdownEmits, DropdownProps, DropdownOption } from '@uikit/compon
 import { useNavigateRoute } from '@uikit/composables/useNagivateRoute';
 import { flow } from '@uikit/utils/flow';
 
+
 defineProps<DropdownProps>();
 const emit = defineEmits<DropdownEmits>();
 
@@ -16,12 +17,11 @@ const isOpen: Ref<boolean> = ref(false);
 
 const toggleDropdown = (option: boolean): boolean => ! option;
 
-
 const { navigate } = useNavigateRoute();
 const handleSelection = (option: DropdownOption): `/${string}`| undefined => {
   isOpen.value = toggleDropdown(isOpen.value);
-  emit('update:selection', option.label);
   
+  emit('update:selection', option.label);
   return option.route;
 };
 
@@ -62,12 +62,9 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutsideDr
         <v-button v-for="o in options" :key="o.label"
           :option="o"
           :action="flow(
-            () => { 
-              handleSelection(o);
-              return true;
-            },
-            () => {
-              if (o.route) navigate(o.route);
+            () => handleSelection(o),
+            (route?: `/${string}`) => {
+              if (route) navigate(route);
               return true;
             }
           )"
