@@ -1,19 +1,30 @@
 @import '@uikit/v-common.scss';
 
 
-.v-search {
-  @extend .flex-vertical;
+.v-search-container {
+  .v-search-input {
+    @extend .flex-vertical;
+  
+    input {
+      @extend .flex-horizontal;
+  
+      min-width: 50vw;
+      justify-content: flex-start;
+      text-wrap: nowrap;
+      color: var(--v-text-primary-invert);
+      background: var(--v-background-invert);
+      border-radius: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      margin: 0.5rem;
+    }
+  }
 
-  input {
-    @extend .flex-horizontal;
+  .v-search-hints {
+    position: absolute;
+    overflow: hidden;
 
-    min-width: 50vw;
-    justify-content: flex-start;
-    text-wrap: nowrap;
-    color: var(--v-text-primary-invert);
-    background: var(--v-background-invert);
-    border-radius: 0.25rem;
-    padding: 0.25rem 0.5rem;
-    margin: 0.5rem;
+    top: 32px;
+    width: 55vw;
+    z-index: 20;
   }
 }

@@ -1,4 +1,4 @@
-interface ContextMap {
+export interface ContextMap {
   context: string; 
   start: number; 
   end: number;
@@ -10,7 +10,6 @@ export const useHints = () => {
     return contextPositions.reduce((closest: ContextMap, current: ContextMap) => {
       if (current.start < position) {
         const currDiff = position - current.start;
-        
         if (! closest || currDiff < position -closest.start) return current;
       }
 
@@ -56,5 +55,11 @@ export const useHints = () => {
     return maxLength + 1;
   }
 
-  return { findClosestContextStart, findWordEnd, stringifyIfNeeded, updateCursorPosition }
+  const parseContext = (potentialContext: string): string => {
+    return potentialContext.startsWith('[') && potentialContext.endsWith(']') 
+      ? potentialContext.slice(1, -1)
+      : potentialContext;
+  }
+
+  return { findClosestContextStart, findWordEnd, stringifyIfNeeded, updateCursorPosition, parseContext }
 };

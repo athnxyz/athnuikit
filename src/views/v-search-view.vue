@@ -3,6 +3,19 @@ import { ref } from 'vue';
 
 
 const textRef = ref<string>('');
+const contextMapRef = ref({
+  id: {
+    context: 'id',
+    help: 'the id to search for',
+    filters: [ 1, 2, 3 ]
+  },
+  group: {
+    context: 'animals',
+    help: '',
+    filters: [ 'cat', 'cow', 'dog', 'dolphin', 'eagle']
+  }
+})
+
 const onSubmit = async (text: string): Promise<boolean> => {
   console.log('submitting:', text);
   return true;
@@ -46,7 +59,9 @@ const implementation = ref(`<v-search v-model:text="inputRef"></v-search>`);
       
       <v-search 
         v-model:text="textRef"
-        :onSubmit="onSubmit"></v-search>
+        :onSubmit="onSubmit"
+        :contextMap="contextMapRef">
+      </v-search>
 
     </v-container>
 

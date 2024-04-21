@@ -1,14 +1,13 @@
-
-export interface SearchContextMap<T extends string> {
-  context: T;
+export interface SearchContextMap {
+  context: string;
   help?: string;
-  getAvailableFilters(): Promise<(string | number | boolean)[]>;
+  filters: (string | number | boolean)[];
 }
 
-export interface SearchProps<T extends string> {
+export interface SearchProps {
   text: string;
   onSubmit(text: string): Promise<boolean>;
-  contextMap?: { [context in T]: SearchContextMap<T> };
+  contextMap?: { [context: string]: SearchContextMap };
   placeholder?: string;
 }
 
@@ -16,7 +15,7 @@ export interface SearchEmits {
   (e: 'update:text', text: string): void;
 }
 
-export const defaultSearchProps: Pick<SearchProps<any>, 'text' | 'placeholder'> = {
+export const defaultSearchProps: Pick<SearchProps, 'text' | 'placeholder'> = {
   text: '',
   placeholder: 'begin typing to perform search...',
 };
