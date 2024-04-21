@@ -11,6 +11,7 @@ import vmasterview from '@uikit/components/v-master-view/v-master-view.vue';
 import vnav from '@uikit/components/v-nav/v-nav.vue';
 import vnotification from '@uikit/components/v-notification/v-notification.vue';
 import vpath from '@uikit/components/v-path/v-path.vue';
+import vsearch from '@uikit/components/v-search/v-search.vue';
 import vsidebar from '@uikit/components/v-sidebar/v-sidebar.vue';
 import vtag from '@uikit/components/v-tag/v-tag.vue';
 import vtitle from '@uikit/components/v-title/v-title.vue';
@@ -35,6 +36,7 @@ export {
   vnav,
   vnotification,
   vpath,
+  vsearch,
   vsidebar,
   vtag,
   vtitle,
