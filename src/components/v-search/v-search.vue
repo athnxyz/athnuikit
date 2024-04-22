@@ -29,17 +29,16 @@ const searchInputRef = ref<HTMLElement | undefined>();
 const searchHintsRef = ref<HTMLElement | undefined>();
 const focusRef = ref<boolean>(false);
 
-const getLocalContext = (): ContextMap | null => { // get the current context (left aligned) from the current cursor position
-  if (cursorRef.value < 1 || contextPositions.value.length < 1) return null;
+const getLocalContext = (): ContextMap | undefined => { // get the current context (left aligned) from the current cursor position
+  if (cursorRef.value < 1 || contextPositions.value.length < 1) return undefined;
 
   const contextFilter = findClosestContextStart(contextPositions.value, cursorRef.value);
   if (props.contextMap && contextFilter) {
     const validContext = props.contextMap[parseContext(contextFilter.context)];
-    if (validContext) return contextFilter; // if context exists in mapping, return
-    return null;
+    return validContext ? contextFilter: undefined // if context exists in mapping, return it, otherwise undefined
   }
 
-  return contextFilter ??  null; // if hints are disabled, just return the filter since no validation needs to occur
+  return contextFilter ??  undefined; // if hints are disabled, just return the filter since no validation needs to occur
 };
 
 const parseCurrentContexts = (updatedValue: string): Pick<SearchContextMap, 'context' | 'filters'>[] => {

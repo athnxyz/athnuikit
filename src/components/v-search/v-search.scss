@@ -3,22 +3,23 @@
 
 .v-search-container {
   @extend .flex-vertical;
+  position: relative;
 
   .v-search-input {    
     border-radius: 0.25rem;
     margin: 2px;
 
     input {
-      width: clamp(45vw, 50vw, 55vw);
+      min-width: 25vw;
       justify-content: flex-start;
       text-wrap: nowrap;
       color: var(--v-text-primary-invert);
       background: var(--v-background-invert);
       border-radius: 0.25rem;
-      padding: 0.5rem;
+      padding: 8px;
       outline: none;
       border: 0px transparent;
-      line-height: 1.6;
+      line-height: 2;
       font-size: 14px;
     }
   }
@@ -30,6 +31,9 @@
   .v-search-contexts {
     @extend .flex-vertical;
 
+    position: absolute;
+    min-width: 50vw;
+    top: 48px;
     z-index: 20;
     background-color: var(--v-container);
     box-shadow: 0 4px 6px -4px var(--v-container-boxshadow);
@@ -53,11 +57,12 @@
     }
 
     h4 {
+      text-transform: uppercase;
       font-weight: bold;
       color: var(--v-text-primary);
       padding-left: 0.25rem;
       border-left: 3px solid var(--v-title-border);
-      margin: 0.25rem 0;
+      margin: 0.5rem 0;
     }
   }
 }
