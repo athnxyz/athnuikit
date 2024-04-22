@@ -10,7 +10,7 @@
     margin: 2px;
 
     input {
-      min-width: 25vw;
+      width: clamp(40vw, 45vw, 50vw);
       justify-content: flex-start;
       text-wrap: nowrap;
       color: var(--v-text-primary-invert);
@@ -32,7 +32,7 @@
     @extend .flex-vertical;
 
     position: absolute;
-    min-width: 50vw;
+    width: clamp(40vw, 45vw, 50vw);
     top: 48px;
     z-index: 20;
     background-color: var(--v-container);
@@ -47,8 +47,8 @@
       color: var(--v-text-primary-invert);
       background: var(--v-background-invert);
       border-radius: 0.25rem;
-      padding: 0.25rem 0.5rem;
-      margin: 0.5rem;
+      padding: 0.5rem;
+      margin: 0.25rem 0.5rem;
 
       p {
         font-weight: bold;
