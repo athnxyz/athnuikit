@@ -158,7 +158,6 @@ const handleClickOutsideSearch = (event: MouseEvent) => { // focus off search an
 
 const focusOut = () => {
   focusRef.value = false;
-  
 }
 
 watch(textRef, text => {
