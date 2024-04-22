@@ -22,7 +22,7 @@ export const useHints = () => {
     if (offset >= cursor && ! partialWordRegex.test(str[cursor])) return offset;
 
     const separatorRegex = /[\t\r\n,]/;
-    const contextRegex = /[\\[]/; // /[\[]]/;
+    const contextRegex = /[\[]/; // /[\[]]/;
 
     for (let pos = cursor; pos <= str.length; pos++) {
       if (separatorRegex.test(str[pos])) return pos;
@@ -30,6 +30,15 @@ export const useHints = () => {
     }
 
     return str.length;
+  }
+
+  const findWordStart = (str: string, offset: number, cursor: number, autoComplete?: boolean): number => {
+    const separatorRegex = autoComplete ? /[\s\t\r\n,]/ : /[\t\r\n,]/ ;
+    for (let pos = cursor; pos >= offset; pos--) { 
+      if (separatorRegex.test(str[pos])) return pos + 1;
+    }
+
+    return offset + 1;
   }
 
   const stringifyIfNeeded = (input: any): string => {
@@ -61,5 +70,5 @@ export const useHints = () => {
       : potentialContext;
   }
 
-  return { findClosestContextStart, findWordEnd, stringifyIfNeeded, updateCursorPosition, parseContext }
+  return { findClosestContextStart, findWordEnd, findWordStart, stringifyIfNeeded, updateCursorPosition, parseContext }
 };

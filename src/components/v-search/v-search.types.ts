@@ -4,6 +4,11 @@ export interface SearchContextMap {
   filters: (string | number | boolean)[];
 }
 
+export interface UsedSearchContextMap {
+  context: string;
+  filters: Set<string>;
+}
+
 export interface SearchProps {
   text: string;
   onSubmit(text: string): Promise<boolean>;
