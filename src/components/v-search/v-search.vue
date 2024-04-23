@@ -105,7 +105,6 @@ const getHints = () => { // get hints to display based on current text value and
   const currWordStart = findWordStart(textRef.value.slice(0, cursorRef.value), localContext.end, cursorRef.value);
   const partialWord = ((): string => {
     const pW = textRef.value.slice(currWordStart, cursorRef.value).trim();
-    console.log('pw', pW, 'curr word start:', currWordStart, 'cursor:', cursorRef.value);
     if (pW.startsWith('/')) return pW.slice(1);
     return pW;
   })();
